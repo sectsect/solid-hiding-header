@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "mikestead.dotenv",
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss",
+    "austenc.tailwind-docs",
+    "petermekhaeil.vscode-tailwindcss-explorer",
+    "bernardogualberto.solidjs",
+    "Orta.vscode-jest"
+  ]
+}
