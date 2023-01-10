@@ -4,6 +4,8 @@
 
 # @sect/solid-hiding-header
 
+[![CodeQL](https://github.com/sectsect/solid-hiding-header/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/sectsect/solid-hiding-header/actions/workflows/github-code-scanning/codeql) [![npm version](https://badge.fury.io/js/@sect%2Fsolid-hiding-header.svg)](https://badge.fury.io/js/@sect%2Fsolid-hiding-header) ![NPM](https://img.shields.io/npm/l/@sect/solid-hiding-header)
+
 Forked from [Hiding Header React](https://github.com/FilipChalupa/hiding-header-react) by [Filip Chalupa](https://github.com/FilipChalupa).
 
 ## Demo
