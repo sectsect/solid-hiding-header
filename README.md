@@ -47,7 +47,7 @@ const Header: Component = () => {
 };
 ```
 
-### Allow Top Leval HTML `<header>` tag
+### Allow Top Level HTML `<header>` tag
 ```tsx
 const Header: Component = () => {
   return (
