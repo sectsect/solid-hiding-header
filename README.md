@@ -57,3 +57,19 @@ const Header: Component = () => {
   );
 };
 ```
+
+See Core API docs for more options.  
+https://github.com/FilipChalupa/hiding-header/blob/main/README.md
+
+## Changelog 
+
+See [CHANGELOG](https://github.com/sectsect/solid-hiding-header/blob/master/CHANGELOG.md) file.
+
+## License
+
+See [LICENSE](https://github.com/sectsect/solid-hiding-header/blob/main/LICENSE) file.
+
+<p align="center">✌️</p>
+<p align="center">
+<sub><sup>A little project by <a href="https://github.com/sectsect">@sectsect</a></sup></sub>
+</p>
