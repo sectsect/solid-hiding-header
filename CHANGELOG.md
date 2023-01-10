@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.2](https://github.com/sectsect/solid-hiding-header/tree/1.0.2) (2023-01-10)
+
+[Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.0.1...1.0.2)
+
+**Merged pull requests:**
+
+- chore: fix README.md typo [\#1](https://github.com/sectsect/solid-hiding-header/pull/1) ([FilipChalupa](https://github.com/FilipChalupa))
+
 ## [1.0.1](https://github.com/sectsect/solid-hiding-header/tree/1.0.1) (2023-01-10)
 
 [Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.0.0...1.0.1)
