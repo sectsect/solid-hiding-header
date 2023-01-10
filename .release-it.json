@@ -1,0 +1,5 @@
+{
+  "git": {
+    "commitMessage": "chore: bump version to v${version}"
+  }
+}
