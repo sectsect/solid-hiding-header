@@ -1,23 +1,44 @@
+// {
+//   "compilerOptions": {
+//     "target": "ESNext",
+//     "module": "ESNext",
+//     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+//     "moduleResolution": "node",
+//     "allowSyntheticDefaultImports": true,
+//     "resolveJsonModule": true,
+//     "esModuleInterop": true,
+//     "jsx": "preserve",
+//     "jsxImportSource": "solid-js",
+//     "noEmit": true,
+//     "isolatedModules": true,
+//     "skipLibCheck": true,
+//     "types": ["vitest/globals"],
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["./src/*"]
+//     }
+//   },
+//   "include": ["src"],
+//   "exclude": ["node_modules", "dist"]
+// }
+
 {
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "types": ["vite/client"],
     "noEmit": true,
     "isolatedModules": true,
     "skipLibCheck": true,
-    "types": [],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/public/*": ["./public/*"]
     }
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  }
 }
