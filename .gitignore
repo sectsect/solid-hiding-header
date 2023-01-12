@@ -4,3 +4,5 @@ dist
 # dotenv local files
 .env*.local*
 
+# vitest
+coverage
