@@ -21,6 +21,7 @@ export interface HidingHeaderProps {
   class?: JSX.HTMLAttributes<HTMLDivElement>['class'];
   innerClass?: JSX.HTMLAttributes<HTMLDivElement>['class'];
   component?: string | Component<JSX.HTMLAttributes<HTMLElement>>;
+  role?: JSX.HTMLAttributes<HTMLDivElement>['role'];
   heightPropertyName?: HidingHeaderOptions['heightPropertyName'];
   boundsHeightPropertyName?: HidingHeaderOptions['boundsHeightPropertyName'];
   animationOffsetPropertyName?: HidingHeaderOptions['animationOffsetPropertyName'];
@@ -38,6 +39,7 @@ export const HidingHeader: Component<HidingHeaderProps> = rawProps => {
       // class: 'hidingHeader',
       // innerClass: 'hidingHeader-in',
       component: 'div',
+      role: 'banner',
     },
     rawProps,
   );
@@ -63,6 +65,7 @@ export const HidingHeader: Component<HidingHeaderProps> = rawProps => {
     <Dynamic
       component={props.component}
       class={props.class ? `hidingHeader ${props.class}` : 'hidingHeader'}
+      role={props.component === 'div' ? props.role : undefined}
       ref={container}
     >
       <div
