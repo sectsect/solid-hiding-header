@@ -32,6 +32,10 @@ jobs:
           name: Test
           command: |
             pnpm run test
+      - run:
+          name: Test(Coverage)
+          command: |
+            pnpm run coverage
       - save_cache:
           name: Save pnpm Package Cache
           key: pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
