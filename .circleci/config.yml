@@ -3,7 +3,8 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2.1
-
+orbs:
+  codecov: codecov/codecov@3.2.4
 jobs:
   build:
     docker:
@@ -36,3 +37,5 @@ jobs:
           key: pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
           paths:
             - node_modules
+      - codecov/upload:
+          file: ./coverage/lcov.info
