@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3](https://github.com/sectsect/solid-hiding-header/tree/1.1.3) (2023-01-13)
+
+[Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.1.2...1.1.3)
+
+## [1.1.2](https://github.com/sectsect/solid-hiding-header/tree/1.1.2) (2023-01-13)
+
+[Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.1.1...1.1.2)
+
 ## [1.1.1](https://github.com/sectsect/solid-hiding-header/tree/1.1.1) (2023-01-13)
 
 [Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.1.0...1.1.1)
