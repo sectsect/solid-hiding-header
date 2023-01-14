@@ -16,39 +16,25 @@ describe('HidingHeader component', () => {
     // now you can access it as `ResizeObserver` or `window.ResizeObserver`
   });
 
-//   test('Top Level element has <header> tag', () => {
-//     render(() => (
-//       <HidingHeader component="header">Header</HidingHeader>
-//     ));
-//     // screen.getByRole('button', { name: '' });
-
-//     const containerElm = screen.getByRole('banner', { name: '' });
-//     expect(containerElm).toEqual(`<header
-//   class="hidingHeader"
-//   style="--hidingHeader-height: 0px;"
-// >
-//   <div
-//     class="hidingHeader-in"
-//   >
-//     Header
-//   </div>
-// </header>`);
-//   });
-
-  test('allow Top Level HTML <header> tag', () => {
+  test('is assigned a <div> tag', () => {
     render(() => (
-      <HidingHeader component="header">
-        <div class="inner">
-          <p>Header</p>
-        </div>
-      </HidingHeader>
+      <HidingHeader>Header</HidingHeader>
     ));
     // screen.getByRole('button', { name: '' });
 
     const containerElm = screen.getByRole('banner', { name: '' });
-    expect(containerElm).toHaveClass('hidingHeader');
-    // const headerElm = screen.getByText(/^Header$/i); // full string match, ignore case
-    // expect(headerElm).toBeInTheDocument();
+    console.log(containerElm.tagName);
+    expect(containerElm.tagName).toBe('DIV');
+  });
+
+  test('is assigned a <header> tag', () => {
+    render(() => (
+      <HidingHeader component="header">Header</HidingHeader>
+    ));
+    // screen.getByRole('button', { name: '' });
+
+    const containerElm = screen.getByRole('banner', { name: '' });
+    expect(containerElm.tagName).toBe('HEADER');
   });
 
   test('Top Level element has correct default class assigned', () => {
