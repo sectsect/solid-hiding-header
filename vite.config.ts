@@ -31,6 +31,7 @@ export default defineConfig({
     },
     setupFiles: './vitest.setup.ts',
     coverage: {
+      provider: "c8",
       reporter: ['text', 'json', 'html', 'lcov'],
     },
     // solid needs to be inline to work around
