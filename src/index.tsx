@@ -32,7 +32,7 @@ export interface HidingHeaderProps {
 }
 
 export const HidingHeader: Component<HidingHeaderProps> = rawProps => {
-  let container: HTMLElement;
+  let container: HTMLElement | undefined;
 
   const props = mergeProps(
     {
@@ -49,6 +49,7 @@ export const HidingHeader: Component<HidingHeaderProps> = rawProps => {
   >({} as ReturnType<typeof hidingHeader>);
 
   createEffect(() => {
+    if (!container) return;
     const instance = hidingHeader(container, {
       heightPropertyName: props.heightPropertyName,
       boundsHeightPropertyName: props.boundsHeightPropertyName,
