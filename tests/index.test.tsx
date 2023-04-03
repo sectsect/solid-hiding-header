@@ -1,6 +1,6 @@
 import { render, screen, within } from '@solidjs/testing-library';
 import { expect, describe, test, vi, beforeAll } from 'vitest';
-
+import { mount } from '@vue/test-utils';
 import { HidingHeader } from '@/index';
 
 describe('HidingHeader component', () => {
@@ -14,6 +14,11 @@ describe('HidingHeader component', () => {
     }));
     vi.stubGlobal('ResizeObserver', ResizeObserverMock);
     // now you can access it as `ResizeObserver` or `window.ResizeObserver`
+  });
+
+  test('should exists', () => {
+    const wrapper = mount(HidingHeader)
+    expect(wrapper).toBeTruthy()
   });
 
   test('is assigned a <div> tag', () => {
