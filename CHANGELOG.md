@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.4.0](https://github.com/sectsect/solid-hiding-header/tree/1.4.0) (2023-04-20)
+
+[Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.3.1...1.4.0)
+
+## [1.3.1](https://github.com/sectsect/solid-hiding-header/tree/1.3.1) (2023-04-03)
+
+[Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.3.0...1.3.1)
+
+## [1.3.0](https://github.com/sectsect/solid-hiding-header/tree/1.3.0) (2023-04-02)
+
+[Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.2.1...1.3.0)
+
+## [1.2.1](https://github.com/sectsect/solid-hiding-header/tree/1.2.1) (2023-03-20)
+
+[Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.2.0...1.2.1)
+
+## [1.2.0](https://github.com/sectsect/solid-hiding-header/tree/1.2.0) (2023-03-18)
+
+[Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.1.5...1.2.0)
+
+## [1.1.5](https://github.com/sectsect/solid-hiding-header/tree/1.1.5) (2023-02-08)
+
+[Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.1.4...1.1.5)
+
 ## [1.1.4](https://github.com/sectsect/solid-hiding-header/tree/1.1.4) (2023-01-14)
 
 [Full Changelog](https://github.com/sectsect/solid-hiding-header/compare/1.1.3...1.1.4)
