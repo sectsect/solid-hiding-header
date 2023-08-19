@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
@@ -31,7 +32,7 @@ export default defineConfig({
     },
     setupFiles: './vitest.setup.ts',
     coverage: {
-      provider: "c8",
+      provider: 'c8',
       reporter: ['text', 'json', 'html', 'lcov'],
     },
     // solid needs to be inline to work around
@@ -43,5 +44,6 @@ export default defineConfig({
     // or both out to improve performance:
     // threads: false,
     // isolate: false,
+    deps: {}, // @ https://qiita.com/Stead08/items/762093fe86999fec4e80
   },
 });
