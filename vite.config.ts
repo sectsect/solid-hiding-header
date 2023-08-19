@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /// <reference types="vitest" />
-import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [solidPlugin(), tsconfigPaths()],
@@ -27,12 +27,12 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
-    transformMode: {
-      web: [/\.[jt]sx?$/],
+    testTransformMode: {
+      web: ['/.[jt]sx?$/'],
     },
     setupFiles: './vitest.setup.ts',
     coverage: {
-      provider: 'c8',
+      provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
     },
     // solid needs to be inline to work around
