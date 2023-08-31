@@ -1,0 +1,7 @@
+svg {
+  @apply fill-current stroke-current stroke-0 w-[1em] h-[1em];
+
+  & path {
+    @apply fill-current;
+  }
+}

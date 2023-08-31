@@ -1,0 +1,31 @@
+/* stylelint-disable custom-property-pattern */
+.hidingHeader {
+  position: relative;
+
+  --hidingHeader-height: auto;
+  --hidingHeader-bounds-height: auto;
+  --hidingHeader-animation-offset: 0;
+
+  z-index: 40;
+  height: var(--hidingHeader-bounds-height);
+  margin-bottom: calc(
+    var(--hidingHeader-height) - var(--hidingHeader-bounds-height)
+  );
+  pointer-events: none;
+}
+
+.hidingHeader-in {
+  position: relative;
+  position: sticky;
+  top: 0;
+  pointer-events: auto;
+  transition: transform 0.2s;
+  transform: translateY(var(--hidingHeader-animation-offset));
+}
+
+@media (prefers-reduced-motion) {
+  .hidingHeader-in {
+    transition-timing-function: step-end;
+    transition-duration: 1ms;
+  }
+}

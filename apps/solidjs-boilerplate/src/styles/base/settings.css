@@ -1,0 +1,19 @@
+/* custom media queries */
+
+@custom-media --viewport-medium (width >= 768px);
+@custom-media --viewport-large (width >= 992px);
+@custom-media --viewport-extra-large (width >= 1200px);
+
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+:root {
+  /* stylelint-disable-next-line custom-property-pattern */
+  /* --inner-height: calc(var(--innerVh, 1vh) * 100); */
+  /* --font-size: 20px; */
+}
+
+@media (--viewport-medium) {
+  :root {
+    /* --font-size: 20px; */
+  }
+}
