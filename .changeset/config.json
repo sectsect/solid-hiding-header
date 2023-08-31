@@ -7,5 +7,6 @@
   "linked": [],
   "access": "public",
   "updateInternalDependencies": "patch",
-  "ignore": ["solidjs-boilerplate"]
+  "ignore": ["solidjs-boilerplate"],
+  "title": "chore: release package(s)"
 }
