@@ -1,0 +1,65 @@
+@import url('base/settings.css');
+@import url('base/svg.css');
+@import url('libs/hiding-header.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @ https://tailwindcss.jp/docs/functions-and-directives#layer */
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  picture,
+  source {
+    @apply block;
+  }
+
+  a,
+  button,
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset'],
+  input[type='image'] {
+    @apply no-underline transition duration-300 hover:opacity-80;
+  }
+  /* Change Autocomplete styles in Chrome */
+  :where(input, textarea, select) {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      transition: background-color 5000s ease-in-out 0s !important;
+    }
+  }
+}
+
+@layer components {
+  body {
+    @apply font-sans text-base font-bold leading-normal text-black antialiased;
+  }
+
+  #root {
+    @apply flex flex-col min-h-screen;
+  }
+
+  article {
+    @apply h-article;
+  }
+
+  .inner {
+    @apply w-full px-4 md:max-w-screen-2xl md:px-16 md:mx-auto;
+  }
+  /* @media (--viewport-medium) {
+
+  } */
+}

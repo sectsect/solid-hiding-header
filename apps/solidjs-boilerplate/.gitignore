@@ -1,0 +1,11 @@
+node_modules
+dist
+
+# dotenv local files
+.env*.local*
+
+# vitest
+coverage
+/test-results/
+/playwright-report/
+/playwright/.cache/

@@ -1,134 +1,31 @@
 {
   "version": "1.5.1",
-  "name": "@sect/solid-hiding-header",
-  "description": "SolidJS header that disappears on scroll down and appears on scroll up.",
-  "license": "MIT",
-  "author": "sect",
-  "contributors": [],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sectsect/solid-hiding-header.git"
-  },
-  "homepage": "https://github.com/sectsect/solid-hiding-header#readme",
-  "bugs": {
-    "url": "https://github.com/sectsect/solid-hiding-header/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "private": false,
-  "sideEffects": false,
-  "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "solid": "./dist/source/index.jsx",
-      "import": "./dist/esm/index.js",
-      "browser": {
-        "import": "./dist/esm/index.js",
-        "require": "./dist/cjs/index.js"
-      },
-      "require": "./dist/cjs/index.js",
-      "node": "./dist/cjs/index.js"
-    }
-  },
   "scripts": {
-    "dev": "vite serve dev",
-    "test": "vitest",
-    "coverage": "vitest run --coverage",
-    "build": "rollup -c",
-    "watch": "rollup -c --watch",
-    "prepublishOnly": "pnpm build",
-    "format": "prettier -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
-    "update-deps": "taze -w && pnpm i",
-    "lint": "eslint --ext .ts,tsx src",
-    "lint:fix": "eslint --fix --ext .ts,tsx src",
-    "type-check": "tsc --noEmit --pretty",
-    "type-check:watch": "npm run type-check -- --watch",
-    "prepare": "husky install",
-    "release": "release-it"
-  },
-  "lint-staged": {
-    "*": [
-      "secretlint"
-    ],
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "eslint"
-    ],
-    "src/**/*.{ts,tsx}": [
-      "tsc-files --noEmit"
-    ],
-    "src/**/*.json": [
-      "prettier --write"
-    ]
-  },
-  "peerDependencies": {
-    "solid-js": ">=1.0.0"
-  },
-  "dependencies": {
-    "hiding-header": "^0.9.0"
+    "build": "turbo build",
+    "dev": "turbo dev --no-cache --continue",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch",
+    "test:e2e": "turbo test:e2e --filter=solidjs-boilerplate",
+    "coverage": "turbo coverage",
+    "lint": "turbo lint",
+    "clean": "turbo clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo build --filter=solidjs-boilerplate^... && changeset publish",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@secretlint/secretlint-rule-preset-recommend": "^7.0.7",
-    "@solidjs/testing-library": "^0.8.4",
-    "@testing-library/jest-dom": "^6.0.1",
-    "@types/node": "^20.5.1",
-    "@types/testing-library__jest-dom": "^5.14.9",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
-    "@vitest/coverage-v8": "^0.34.2",
-    "@vue/test-utils": "^2.4.1",
-    "babel-preset-solid": "^1.7.7",
-    "eslint": "8.47.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.1.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-import-resolver-typescript": "^3.6.0",
-    "eslint-plugin-cypress": "^2.14.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-jest": "^27.2.3",
-    "eslint-plugin-jest-dom": "^5.0.2",
-    "eslint-plugin-jest-formatting": "^3.1.0",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-solid": "^0.12.1",
-    "eslint-plugin-tailwindcss": "^3.13.0",
-    "eslint-plugin-testing-library": "^6.0.0",
-    "eslint-plugin-tsdoc": "^0.2.17",
-    "eslint-plugin-unused-imports": "^3.0.0",
+    "eslint": "^8.48.0",
     "husky": "^8.0.3",
-    "jsdom": "^22.1.0",
-    "lint-staged": "^14.0.0",
-    "prettier": "3.0.2",
-    "release-it": "^16.1.5",
-    "rollup": "^3.28.0",
-    "rollup-preset-solid": "^2.0.1",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
     "secretlint": "^7.0.7",
-    "solid-js": "^1.7.11",
-    "taze": "^0.11.2",
-    "tsc-files": "^1.1.4",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9",
-    "vite-plugin-solid": "^2.7.0",
-    "vite-tsconfig-paths": "^4.2.0",
-    "vitest": "^0.34.2"
+    "turbo": "^1.10.13"
   },
-  "keywords": [
-    "solid",
-    "solidjs",
-    "header",
-    "scroll",
-    "typescript"
-  ],
-  "packageManager": "pnpm@8.6.12"
+  "packageManager": "pnpm@8.7.0"
 }
