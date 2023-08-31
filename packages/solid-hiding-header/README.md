@@ -4,7 +4,7 @@
 
 # @sect/solid-hiding-header
 
-[![CircleCI](https://circleci.com/gh/sectsect/solid-hiding-header.svg?style=svg)](https://circleci.com/gh/sectsect/solid-hiding-header) [![codecov](https://codecov.io/gh/sectsect/solid-hiding-header/branch/main/graph/badge.svg?token=JKS41JGTAV)](https://codecov.io/gh/sectsect/solid-hiding-header) [![CodeQL](https://github.com/sectsect/solid-hiding-header/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/sectsect/solid-hiding-header/actions/workflows/github-code-scanning/codeql) [![npm version](https://badge.fury.io/js/@sect%2Fsolid-hiding-header.svg)](https://badge.fury.io/js/@sect%2Fsolid-hiding-header) ![NPM](https://img.shields.io/npm/l/@sect/solid-hiding-header)
+[![Release](https://github.com/sectsect/solid-hiding-header/actions/workflows/release.yml/badge.svg)](https://github.com/sectsect/solid-hiding-header/actions/workflows/release.yml) [![codecov](https://codecov.io/gh/sectsect/solid-hiding-header/branch/main/graph/badge.svg?token=JKS41JGTAV)](https://codecov.io/gh/sectsect/solid-hiding-header) [![CodeQL](https://github.com/sectsect/solid-hiding-header/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/sectsect/solid-hiding-header/actions/workflows/github-code-scanning/codeql) [![npm version](https://badge.fury.io/js/@sect%2Fsolid-hiding-header.svg)](https://badge.fury.io/js/@sect%2Fsolid-hiding-header) ![NPM](https://img.shields.io/npm/l/@sect/solid-hiding-header)
 
 Forked from [Hiding Header React](https://github.com/FilipChalupa/hiding-header-react) by [Filip Chalupa](https://github.com/FilipChalupa).
 
