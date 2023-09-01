@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.3
+
+### Patch Changes
+
+- 850acb5: update dependencies
+- 21a6d88: update Playwright to v1.37.1
+
 ## 2.0.2
 
 ### Patch Changes
