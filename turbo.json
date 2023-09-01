@@ -11,27 +11,23 @@
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
       "dependsOn": ["^build"]
     },
-    "test": {
-      "cache": false
-    },
+    "test": {},
     "test:watch": {
       "cache": false
     },
-    "test:e2e": {
-      "cache": false
-    },
+    "test:e2e": {},
     "coverage": {
       "outputs": ["coverage/**"],
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build"]
+    },
+    "lint": {},
+    "lint:fix": {},
+    "lint:css": {},
+    "type-check": {},
+    "type-check:watch": {
       "cache": false
     },
-    "lint": {
-      "cache": false
-    },
-    "type-check:watch": {},
-    "start": {
-      "cache": false
-    },
+    "start": {},
     "clean": {
       "cache": false
     }
