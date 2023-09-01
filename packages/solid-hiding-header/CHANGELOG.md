@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.2
+
+### Patch Changes
+
+- 5036350: update README.md / code cleanup / remove an unwanted package / update package.json
+- c5eee8b: optimize cache handling on Turborepo
+
 ## 2.0.1
 
 ### Patch Changes
