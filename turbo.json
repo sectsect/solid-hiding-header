@@ -11,11 +11,15 @@
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
       "dependsOn": ["^build"]
     },
-    "test": {},
+    "test": {
+      "dependsOn": ["^build"]
+    },
     "test:watch": {
       "cache": false
     },
-    "test:e2e": {},
+    "test:e2e": {
+      "dependsOn": ["^build"]
+    },
     "coverage": {
       "outputs": ["coverage/**"],
       "dependsOn": ["^build"]
