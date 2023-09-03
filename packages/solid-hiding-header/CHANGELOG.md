@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.5
+
+### Patch Changes
+
+- [`0828588`](https://github.com/sectsect/solid-hiding-header/commit/0828588212b87106db322549d1c62fa4c0c69cd0) Thanks [@sectsect](https://github.com/sectsect)! - setup turbo remote caching
+
+- [`fae96cc`](https://github.com/sectsect/solid-hiding-header/commit/fae96cca64e60a9d10708e28c1277eff6ac1908d) Thanks [@sectsect](https://github.com/sectsect)! - optimize dependencies in pipeline on Turborepo
+
 ## 2.0.4
 
 ### Patch Changes
