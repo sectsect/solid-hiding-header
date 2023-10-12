@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.9
+
+### Patch Changes
+
+- [`065bd7b`](https://github.com/sectsect/solid-hiding-header/commit/065bd7b284473d67fc65fd806978628aa1997171) Thanks [@sectsect](https://github.com/sectsect)! - upgrade GitHub Actions workflows from Node 12
+
 ## 2.0.8
 
 ### Patch Changes
