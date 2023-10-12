@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.8
+
+### Patch Changes
+
+- [`756236b`](https://github.com/sectsect/solid-hiding-header/commit/756236bccae8e32b5b3949ecea792890db8c981c) Thanks [@sectsect](https://github.com/sectsect)! - add package 'eslint-plugin-deprecation'
+
 ## 2.0.7
 
 ### Patch Changes
