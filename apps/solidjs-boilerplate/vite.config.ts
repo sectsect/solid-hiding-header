@@ -31,6 +31,11 @@ export default defineConfig({
       web: ['/.[jt]sx?$/'],
     },
     setupFiles: './vitest.setup.ts',
+    coverage: {
+      all: false,
+      provider: 'v8',
+      reporter: ['text', 'json', 'html', 'lcov'],
+    },
     // solid needs to be inline to work around
     // a resolution issue in vitest:
     // deps: {

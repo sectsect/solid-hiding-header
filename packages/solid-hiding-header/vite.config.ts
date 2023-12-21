@@ -32,6 +32,7 @@ export default defineConfig({
     },
     setupFiles: './vitest.setup.ts',
     coverage: {
+      all: false,
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
     },
