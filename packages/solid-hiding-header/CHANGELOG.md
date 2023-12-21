@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.10
+
+### Patch Changes
+
+- [`36f2ea9`](https://github.com/sectsect/solid-hiding-header/commit/36f2ea92627434daa8139df645e14b30b5d7b351) Thanks [@sectsect](https://github.com/sectsect)! - update Turborepo to v1.11.x / update dependencies
+
 ## 2.0.9
 
 ### Patch Changes
