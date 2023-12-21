@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.11
+
+### Patch Changes
+
+- [`fbee00a`](https://github.com/sectsect/solid-hiding-header/commit/fbee00a64c344d6a2eeb09bfd41c5e7ef499be1a) Thanks [@sectsect](https://github.com/sectsect)! - migrate vitest to v1
+
 ## 2.0.10
 
 ### Patch Changes
