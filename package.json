@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "turbo build",
+    "build": "turbo build --log-order=grouped",
     "dev": "turbo dev --no-cache --continue",
     "test": "turbo test",
     "test:watch": "turbo test:watch",
@@ -29,7 +29,7 @@
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "secretlint": "^7.0.7",
-    "turbo": "^1.10.15"
+    "turbo": "^1.11.2"
   },
   "packageManager": "pnpm@8.7.0"
 }
