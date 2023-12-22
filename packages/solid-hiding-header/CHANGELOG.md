@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.12
+
+### Patch Changes
+
+- [`013e812`](https://github.com/sectsect/solid-hiding-header/commit/013e81263bbc566fe74103e02077b0451c629e49) Thanks [@sectsect](https://github.com/sectsect)! - update dependencies
+
 ## 2.0.11
 
 ### Patch Changes
