@@ -1,8 +1,7 @@
 import type { Component } from 'solid-js';
-import { lazy } from 'solid-js';
 
 import { Meta } from '@solidjs/meta';
-import { Routes, Route } from '@solidjs/router';
+import type { RouteSectionProps } from '@solidjs/router';
 import { Toaster } from 'solid-toast';
 
 import Footer from '@/components/modules/Footer/Footer';
@@ -11,15 +10,8 @@ import { AppConfig } from '@/constants/AppConfig';
 
 const { siteName, locale } = AppConfig;
 
-const HomeContent = lazy(
-  () => import('@/components/modules/HomeContent/HomeContent'),
-);
-const PostList = lazy(() => import('@/components/modules/PostList/PostList'));
-const PostContent = lazy(
-  () => import('@/components/modules/PostContent/PostContent'),
-);
-
-const App: Component = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const App: Component<RouteSectionProps<unknown>> = props => {
   return (
     <>
       <Meta name="twitter:card" content="summary_large_image" />
@@ -30,13 +22,7 @@ const App: Component = () => {
 
       <Header />
       <main class="flex-1 text-xl">
-        <article>
-          <Routes>
-            <Route path="/" component={HomeContent} />
-            <Route path="/post" component={PostList} />
-            <Route path="/post/:id" component={PostContent} />
-          </Routes>
-        </article>
+        <article>{props.children}</article>
       </main>
       <Footer />
       <Toaster position="bottom-center" />
