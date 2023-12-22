@@ -54,8 +54,8 @@ importers:
         specifier: ^0.9.1
         version: 0.9.1(solid-js@1.8.7)
       '@tanstack/solid-query':
-        specifier: ^4.36.1
-        version: 4.36.1(solid-js@1.8.7)
+        specifier: ^5.14.2
+        version: 5.14.2(solid-js@1.8.7)
       escape-goat:
         specifier: ^4.0.0
         version: 4.0.0
@@ -3672,16 +3672,16 @@ packages:
       tailwindcss: 3.4.0
     dev: true
 
-  /@tanstack/query-core@4.36.1:
-    resolution: {integrity: sha512-DJSilV5+ytBP1FbFcEJovv4rnnm/CokuVvrBEtW/Va9DvuJ3HksbXUJEpI0aV1KtuL4ZoO9AVE6PyNLzF7tLeA==}
+  /@tanstack/query-core@5.14.2:
+    resolution: {integrity: sha512-QmoJvC72sSWs3hgGis8JdmlDvqLfYGWUK4UG6OR9Q6t28JMN9m2FDwKPqoSJ9YVocELCSjMt/FGjEiLfk8000Q==}
     dev: false
 
-  /@tanstack/solid-query@4.36.1(solid-js@1.8.7):
-    resolution: {integrity: sha512-w8L6B12AsCyF7AB2Np4fj9qsOBfrzzxyIkdsniKo9HErdXdlGLyynYaDm4EGsH9ePPcdJSUX7ELGqmXllofn/Q==}
+  /@tanstack/solid-query@5.14.2(solid-js@1.8.7):
+    resolution: {integrity: sha512-c9Lk4jEsknjJWHUlO38w5/ouoRpp7r0tnnpD2Y93dHNihEdprvC6hKo5k2vjFC2NsoX82o6xsf/wMUvaZ34+3w==}
     peerDependencies:
-      solid-js: ^1.5.7
+      solid-js: ^1.6.0
     dependencies:
-      '@tanstack/query-core': 4.36.1
+      '@tanstack/query-core': 5.14.2
       solid-js: 1.8.7
     dev: false
 

@@ -15,7 +15,11 @@ const fetchData = async (): Promise<Post[]> =>
 
 const PostList: Component = () => {
   // w/ createQuery() on '@tanstack/solid-query'
-  const query = createQuery({ queryKey: () => ['/posts'], queryFn: fetchData });
+  const query = createQuery(() => ({
+    queryKey: ['/posts'],
+    queryFn: fetchData,
+  }));
+
   if (query.isError) {
     toast.error('Failed to fetch data.');
   }
