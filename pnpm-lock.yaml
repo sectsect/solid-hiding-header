@@ -54,8 +54,8 @@ importers:
         specifier: ^0.9.1
         version: 0.9.1(solid-js@1.8.7)
       '@tanstack/solid-query':
-        specifier: ^5.14.2
-        version: 5.14.2(solid-js@1.8.7)
+        specifier: ^5.15.0
+        version: 5.15.0(solid-js@1.8.7)
       escape-goat:
         specifier: ^4.0.0
         version: 4.0.0
@@ -3676,8 +3676,8 @@ packages:
     resolution: {integrity: sha512-QmoJvC72sSWs3hgGis8JdmlDvqLfYGWUK4UG6OR9Q6t28JMN9m2FDwKPqoSJ9YVocELCSjMt/FGjEiLfk8000Q==}
     dev: false
 
-  /@tanstack/solid-query@5.14.2(solid-js@1.8.7):
-    resolution: {integrity: sha512-c9Lk4jEsknjJWHUlO38w5/ouoRpp7r0tnnpD2Y93dHNihEdprvC6hKo5k2vjFC2NsoX82o6xsf/wMUvaZ34+3w==}
+  /@tanstack/solid-query@5.15.0(solid-js@1.8.7):
+    resolution: {integrity: sha512-PRqH0FxOgbVEp2V6y8lR1tj8ov0NbRDYTG0Ja5RPtDZBFtYcJ/gZomNwS9GO+sOdVUyAZF9r3XLx63FTCC5g2g==}
     peerDependencies:
       solid-js: ^1.6.0
     dependencies:
