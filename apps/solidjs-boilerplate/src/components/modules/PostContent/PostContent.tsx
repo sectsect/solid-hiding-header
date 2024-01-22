@@ -19,13 +19,14 @@ const PostContent: Component = () => {
   const { id } = params;
 
   // w/ createQuery() on '@tanstack/solid-query'
-  const query = createQuery({
+  const query = createQuery(() => ({
     // Array Keys with variables
     // @ https://tanstack.com/query/v4/docs/react/guides/query-keys?from=reactQueryV3&original=https%3A%2F%2Freact-query-v3.tanstack.com%2Fguides%2Fquery-keys#array-keys-with-variables
-    queryKey: () => [`/posts/`, id],
+    queryKey: [`/posts/`, id],
     // Pass parameter w/ inline anonymous functions. @ https://stackoverflow.com/a/68111112/4542456
     queryFn: () => fetchData(id),
-  });
+  }));
+
   if (query.isError) {
     toast.error('Failed to fetch data.');
   }
