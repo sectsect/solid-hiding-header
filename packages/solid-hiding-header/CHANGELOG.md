@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.13
+
+### Patch Changes
+
+- [`7459076`](https://github.com/sectsect/solid-hiding-header/commit/745907630350312a5ae4f5bf0fd4cfcf6765f58d) Thanks [@sectsect](https://github.com/sectsect)! - update 'tanstack/solid-query' to v5 / update dependencies
+
 ## 2.0.12
 
 ### Patch Changes
