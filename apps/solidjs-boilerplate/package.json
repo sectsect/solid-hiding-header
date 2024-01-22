@@ -89,7 +89,7 @@
     "@sect/solid-hiding-header": "workspace:*",
     "@solidjs/meta": "^0.29.3",
     "@solidjs/router": "^0.9.1",
-    "@tanstack/solid-query": "^5.17.0",
+    "@tanstack/solid-query": "^5.17.19",
     "escape-goat": "^4.0.0",
     "isomorphic-dompurify": "^2.2.0",
     "solid-devtools": "^0.29.3",
