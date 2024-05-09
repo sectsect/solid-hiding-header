@@ -55,24 +55,31 @@ describe('HidingHeader component', () => {
     expect(containerElm).toHaveClass('hidingHeader');
   });
 
-  // test('Top Level element has correct default style assigned', () => {
-  //   render(() => (
-  //     <HidingHeader>
-  //       <div class="inner">
-  //         <p>Header</p>
-  //       </div>
-  //     </HidingHeader>
-  //   ));
+  test('Top Level element has correct default style assigned', () => {
+    render(() => (
+      <HidingHeader>
+        <div class="inner">
+          <p>Header</p>
+        </div>
+      </HidingHeader>
+    ));
 
-  //   const containerElm = screen.getByRole('banner', { name: '' });
+    const containerElm = screen.getByRole('banner', { name: '' });
 
-  //   // Bug for `toHaveStyle()` on CSS Custom Property @ https://github.com/testing-library/jest-dom/issues/280
-  //   // expect(containerElm).toHaveStyle(`--hidingHeader-height: 0px;`);
-  //   const headerRoots = document.getElementsByClassName('hidingHeader');
-  //   const style = window.getComputedStyle(headerRoots[0]);
-  //   const hidingHeaderHeight = style.getPropertyValue('--hidingHeader-height');
-  //   expect(hidingHeaderHeight).toBe('0px');
-  // });
+    // Bug for `toHaveStyle()` on CSS Custom Property @ https://github.com/testing-library/jest-dom/issues/280
+    // expect(containerElm).toHaveStyle(`--hidingHeader-height: 0px;`);
+
+    // const headerRoots = document.getElementsByClassName('hidingHeader');
+    // const style = window.getComputedStyle(headerRoots[0]);
+    // const hidingHeaderHeight = style.getPropertyValue('--hidingHeader-height');
+    // expect(hidingHeaderHeight).toBe('0px');
+
+    // workaround @ https://github.com/testing-library/jest-dom/issues/280#issuecomment-1908657917
+    // @ts-ignore
+    expect(containerElm.style._values).toMatchObject({
+      '--hidingHeader-height': '0px',
+    });
+  });
 
   test('Top Level element has correct additional classes assigned', () => {
     render(() => (
