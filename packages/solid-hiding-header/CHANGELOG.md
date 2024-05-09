@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.15
+
+### Patch Changes
+
+- [`2d4b7c9`](https://github.com/sectsect/solid-hiding-header/commit/2d4b7c9bacd668b95619662e0568b090db19b34e) Thanks [@sectsect](https://github.com/sectsect)! - - chore: update dependencies
+  - chore: update packageManager version in package.json
+  - chore: update turbo
+  - ci: update CI workflow
+  - ci: remove packageManager in package.json
+
 ## 2.0.14
 
 ### Patch Changes
