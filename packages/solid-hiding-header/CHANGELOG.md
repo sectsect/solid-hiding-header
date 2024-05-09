@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.16
+
+### Patch Changes
+
+- [`020a629`](https://github.com/sectsect/solid-hiding-header/commit/020a629f18f2d68b2653caae971b66579d6a8e4e) Thanks [@sectsect](https://github.com/sectsect)! - improve for tests
+
+  - chore: replace deprecated extension in recommendations
+  - chore: update dependencies for Vitest
+  - test: enhance tests
+
 ## 2.0.15
 
 ### Patch Changes
