@@ -131,6 +131,5 @@
     "header",
     "scroll",
     "typescript"
-  ],
-  "packageManager": "pnpm@9.1.0"
+  ]
 }
