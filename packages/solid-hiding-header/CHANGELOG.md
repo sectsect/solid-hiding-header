@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.17
+
+### Patch Changes
+
+- [`9354afc`](https://github.com/sectsect/solid-hiding-header/commit/9354afc9101c993ea904fb693d213e5b74c184e7) Thanks [@sectsect](https://github.com/sectsect)! - Minor bug fix
+
+  - ci: update CI workflow
+  - fix: add missing method to destroy instance in cleanup function
+  - ci: fix error in workflow
+
 ## 2.0.16
 
 ### Patch Changes
