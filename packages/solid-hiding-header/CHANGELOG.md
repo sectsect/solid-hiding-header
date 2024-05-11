@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.19
+
+### Patch Changes
+
+- [`ca32fd3`](https://github.com/sectsect/solid-hiding-header/commit/ca32fd3cf0ff45ce1b3918b23f6f71f1c972e951) Thanks [@sectsect](https://github.com/sectsect)! - Reapply "ci: update CI workflow"
+
 ## 2.0.18
 
 ### Patch Changes
