@@ -1,4 +1,4 @@
-import { Router } from '@solidjs/router';
+import { Route, Router } from '@solidjs/router';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { render, screen } from '@solidjs/testing-library';
 import userEvent from '@testing-library/user-event';
@@ -10,7 +10,14 @@ describe('Counter component', () => {
   test('should be updated the count on click Increment button', async () => {
     // const result = render(() => <Counter />);
     render(() => <Counter />, {
-      wrapper: props => <Router>{props.children}</Router>,
+      wrapper: props => (
+        <Router
+          // eslint-disable-next-line @typescript-eslint/no-shadow
+          root={props => <>{props.children}</>}
+        >
+          <Route path="/" component={() => <>{props.children}</>} />
+        </Router>
+      ),
     });
     // screen.getByRole('button', {name: '' });
 
