@@ -8,7 +8,7 @@
     "austenc.tailwind-docs",
     "petermekhaeil.vscode-tailwindcss-explorer",
     "bernardogualberto.solidjs",
-    "ZixuanChen.vitest-explorer",
+    "vitest.explorer",
     "ms-playwright.playwright"
   ]
 }

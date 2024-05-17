@@ -55,4 +55,5 @@ export default defineConfig({
     ],
     deps: {}, // @ https://qiita.com/Stead08/items/762093fe86999fec4e80
   },
+  define: process.env.VITEST ? {} : { global: 'window' },
 });

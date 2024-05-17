@@ -1,5 +1,11 @@
 import type { Component, JSX } from 'solid-js';
-import { createEffect, createContext, useContext, mergeProps } from 'solid-js';
+import {
+  createEffect,
+  createContext,
+  useContext,
+  mergeProps,
+  onCleanup,
+} from 'solid-js';
 
 import type { HidingHeaderOptions } from 'hiding-header';
 import { hidingHeader } from 'hiding-header';
@@ -60,6 +66,7 @@ export const HidingHeader: Component<HidingHeaderProps> = rawProps => {
       onHomeChange: props.onHomeChange,
     });
     setHidingHeaderInstance(instance);
+    onCleanup(() => instance.destroy());
   });
 
   return (

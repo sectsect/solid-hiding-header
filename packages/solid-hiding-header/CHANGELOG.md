@@ -1,5 +1,65 @@
 # Changelog
 
+## 2.0.19
+
+### Patch Changes
+
+- [`ca32fd3`](https://github.com/sectsect/solid-hiding-header/commit/ca32fd3cf0ff45ce1b3918b23f6f71f1c972e951) Thanks [@sectsect](https://github.com/sectsect)! - Reapply "ci: update CI workflow"
+
+## 2.0.18
+
+### Patch Changes
+
+- [`de4926d`](https://github.com/sectsect/solid-hiding-header/commit/de4926d96a7e095041540361851d766ecf2127a8) Thanks [@sectsect](https://github.com/sectsect)! - Revert "ci: update CI workflow"
+
+## 2.0.17
+
+### Patch Changes
+
+- [`9354afc`](https://github.com/sectsect/solid-hiding-header/commit/9354afc9101c993ea904fb693d213e5b74c184e7) Thanks [@sectsect](https://github.com/sectsect)! - Minor bug fix
+
+  - ci: update CI workflow
+  - fix: add missing method to destroy instance in cleanup function
+  - ci: fix error in workflow
+
+## 2.0.16
+
+### Patch Changes
+
+- [`020a629`](https://github.com/sectsect/solid-hiding-header/commit/020a629f18f2d68b2653caae971b66579d6a8e4e) Thanks [@sectsect](https://github.com/sectsect)! - improve for tests
+
+  - chore: replace deprecated extension in recommendations
+  - chore: update dependencies for Vitest
+  - test: enhance tests
+
+## 2.0.15
+
+### Patch Changes
+
+- [`2d4b7c9`](https://github.com/sectsect/solid-hiding-header/commit/2d4b7c9bacd668b95619662e0568b090db19b34e) Thanks [@sectsect](https://github.com/sectsect)! - - chore: update dependencies
+  - chore: update packageManager version in package.json
+  - chore: update turbo
+  - ci: update CI workflow
+  - ci: remove packageManager in package.json
+
+## 2.0.14
+
+### Patch Changes
+
+- [`6e3c07e`](https://github.com/sectsect/solid-hiding-header/commit/6e3c07ef47e1c306ce02f28c23d4cad6785f0183) Thanks [@sectsect](https://github.com/sectsect)! - update dependencies
+
+## 2.0.13
+
+### Patch Changes
+
+- [`7459076`](https://github.com/sectsect/solid-hiding-header/commit/745907630350312a5ae4f5bf0fd4cfcf6765f58d) Thanks [@sectsect](https://github.com/sectsect)! - update 'tanstack/solid-query' to v5 / update dependencies
+
+## 2.0.12
+
+### Patch Changes
+
+- [`013e812`](https://github.com/sectsect/solid-hiding-header/commit/013e81263bbc566fe74103e02077b0451c629e49) Thanks [@sectsect](https://github.com/sectsect)! - update dependencies
+
 ## 2.0.11
 
 ### Patch Changes
