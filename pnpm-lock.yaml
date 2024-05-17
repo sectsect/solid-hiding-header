@@ -51,8 +51,8 @@ importers:
         specifier: ^0.29.3
         version: 0.29.3(solid-js@1.8.11)
       '@solidjs/router':
-        specifier: ^0.10.5
-        version: 0.10.10(solid-js@1.8.11)
+        specifier: ^0.13.3
+        version: 0.13.3(solid-js@1.8.11)
       '@tanstack/solid-query':
         specifier: ^5.17.19
         version: 5.17.19(solid-js@1.8.11)
@@ -92,7 +92,7 @@ importers:
         version: 8.1.0
       '@solidjs/testing-library':
         specifier: ^0.8.5
-        version: 0.8.5(@solidjs/router@0.10.10(solid-js@1.8.11))(solid-js@1.8.11)
+        version: 0.8.5(@solidjs/router@0.13.3(solid-js@1.8.11))(solid-js@1.8.11)
       '@tailwindcss/forms':
         specifier: ^0.5.7
         version: 0.5.7(tailwindcss@3.4.1)
@@ -288,7 +288,7 @@ importers:
         version: 8.1.0
       '@solidjs/testing-library':
         specifier: ^0.8.5
-        version: 0.8.5(@solidjs/router@0.10.10(solid-js@1.8.11))(solid-js@1.8.11)
+        version: 0.8.5(@solidjs/router@0.13.3(solid-js@1.8.11))(solid-js@1.8.11)
       '@testing-library/jest-dom':
         specifier: ^6.2.0
         version: 6.2.0(@types/jest@29.5.5)(vitest@1.6.0(@types/node@20.11.5)(jsdom@24.0.0)(terser@5.21.0))
@@ -2071,8 +2071,8 @@ packages:
     peerDependencies:
       solid-js: '>=1.8.4'
 
-  '@solidjs/router@0.10.10':
-    resolution: {integrity: sha512-nGl7gMgsojuaupI5MAK2cFtkndmWWSAPhill/8La3IjujY3vMBamcQFymBsA2ejzxEYJjkOlEQHYgp2jNFkwuQ==}
+  '@solidjs/router@0.13.3':
+    resolution: {integrity: sha512-p8zznlvnN3KySMXqT8irhubgDNTETNa/guaGHU/cZl7kuiPO3PmkWNYfoNCygtEpoxLmLpf62/ZKeyhFdZexsw==}
     peerDependencies:
       solid-js: ^1.8.6
 
@@ -8345,13 +8345,13 @@ snapshots:
     dependencies:
       solid-js: 1.8.11
 
-  '@solidjs/router@0.10.10(solid-js@1.8.11)':
+  '@solidjs/router@0.13.3(solid-js@1.8.11)':
     dependencies:
       solid-js: 1.8.11
 
-  '@solidjs/testing-library@0.8.5(@solidjs/router@0.10.10(solid-js@1.8.11))(solid-js@1.8.11)':
+  '@solidjs/testing-library@0.8.5(@solidjs/router@0.13.3(solid-js@1.8.11))(solid-js@1.8.11)':
     dependencies:
-      '@solidjs/router': 0.10.10(solid-js@1.8.11)
+      '@solidjs/router': 0.13.3(solid-js@1.8.11)
       '@testing-library/dom': 9.3.4
       solid-js: 1.8.11
 

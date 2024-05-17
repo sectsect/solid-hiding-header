@@ -88,7 +88,7 @@
   "dependencies": {
     "@sect/solid-hiding-header": "workspace:*",
     "@solidjs/meta": "^0.29.3",
-    "@solidjs/router": "^0.10.5",
+    "@solidjs/router": "^0.13.3",
     "@tanstack/solid-query": "^5.17.19",
     "escape-goat": "^4.0.0",
     "isomorphic-dompurify": "^2.2.0",
