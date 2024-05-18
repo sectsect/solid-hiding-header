@@ -1,4 +1,4 @@
-import { Router } from '@solidjs/router';
+import { Route, Router } from '@solidjs/router';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { render, screen } from '@solidjs/testing-library';
 import { expect, describe, test } from 'vitest';
@@ -9,7 +9,14 @@ describe('Footer component', () => {
   test('should has copyright text', () => {
     // const result = render(() => <Footer />);
     render(() => <Footer />, {
-      wrapper: props => <Router>{props.children}</Router>,
+      wrapper: props => (
+        <Router
+          // eslint-disable-next-line @typescript-eslint/no-shadow
+          root={props => <>{props.children}</>}
+        >
+          <Route path="/" component={() => <>{props.children}</>} />
+        </Router>
+      ),
     });
     const copyElm = screen.getByText(/^© Copyright$/i); // full string match, ignore case
     expect(copyElm).toBeInTheDocument();
@@ -17,7 +24,14 @@ describe('Footer component', () => {
 
   test('should has classes', async () => {
     render(() => <Footer />, {
-      wrapper: props => <Router>{props.children}</Router>,
+      wrapper: props => (
+        <Router
+          // eslint-disable-next-line @typescript-eslint/no-shadow
+          root={props => <>{props.children}</>}
+        >
+          <Route path="/" component={() => <>{props.children}</>} />
+        </Router>
+      ),
     });
     const footerElm = screen.getByRole('contentinfo', { name: '' });
     await expect(footerElm).toHaveClass(

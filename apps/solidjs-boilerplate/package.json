@@ -67,6 +67,7 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-hexrgba": "^2.1.0",
     "postcss-import": "^16.0.0",
+    "postcss-nesting": "^12.1.4",
     "postcss-preset-env": "^9.3.0",
     "postcss-pseudo-is": "^0.3.0",
     "postcss-pxtorem": "^6.1.0",
@@ -88,7 +89,7 @@
   "dependencies": {
     "@sect/solid-hiding-header": "workspace:*",
     "@solidjs/meta": "^0.29.3",
-    "@solidjs/router": "^0.9.1",
+    "@solidjs/router": "^0.13.3",
     "@tanstack/solid-query": "^5.17.19",
     "escape-goat": "^4.0.0",
     "isomorphic-dompurify": "^2.2.0",

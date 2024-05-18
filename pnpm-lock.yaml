@@ -51,8 +51,8 @@ importers:
         specifier: ^0.29.3
         version: 0.29.3(solid-js@1.8.11)
       '@solidjs/router':
-        specifier: ^0.9.1
-        version: 0.9.1(solid-js@1.8.11)
+        specifier: ^0.13.3
+        version: 0.13.3(solid-js@1.8.11)
       '@tanstack/solid-query':
         specifier: ^5.17.19
         version: 5.17.19(solid-js@1.8.11)
@@ -92,7 +92,7 @@ importers:
         version: 8.1.0
       '@solidjs/testing-library':
         specifier: ^0.8.5
-        version: 0.8.5(@solidjs/router@0.9.1(solid-js@1.8.11))(solid-js@1.8.11)
+        version: 0.8.5(@solidjs/router@0.13.3(solid-js@1.8.11))(solid-js@1.8.11)
       '@tailwindcss/forms':
         specifier: ^0.5.7
         version: 0.5.7(tailwindcss@3.4.1)
@@ -219,6 +219,9 @@ importers:
       postcss-import:
         specifier: ^16.0.0
         version: 16.0.0(postcss@8.4.33)
+      postcss-nesting:
+        specifier: ^12.1.4
+        version: 12.1.4(postcss@8.4.33)
       postcss-preset-env:
         specifier: ^9.3.0
         version: 9.3.0(postcss@8.4.33)
@@ -288,7 +291,7 @@ importers:
         version: 8.1.0
       '@solidjs/testing-library':
         specifier: ^0.8.5
-        version: 0.8.5(@solidjs/router@0.9.1(solid-js@1.8.11))(solid-js@1.8.11)
+        version: 0.8.5(@solidjs/router@0.13.3(solid-js@1.8.11))(solid-js@1.8.11)
       '@testing-library/jest-dom':
         specifier: ^6.2.0
         version: 6.2.0(@types/jest@29.5.5)(vitest@1.6.0(@types/node@20.11.5)(jsdom@24.0.0)(terser@5.21.0))
@@ -1496,6 +1499,12 @@ packages:
     peerDependencies:
       postcss: ^8.4
 
+  '@csstools/selector-resolve-nested@1.1.0':
+    resolution: {integrity: sha512-uWvSaeRcHyeNenKg8tp17EVDRkpflmdyvbE0DHo6D/GdBb6PDnCYYU6gRpXhtICMGMcahQmj2zGxwFM/WC8hCg==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss-selector-parser: ^6.0.13
+
   '@csstools/selector-specificity@3.0.0':
     resolution: {integrity: sha512-hBI9tfBtuPIi885ZsZ32IMEU/5nlZH/KOVYJCOh7gyMxaVLGmLedYqFN6Ui1LXkI8JlC8IsuC0rF0btcRZKd5g==}
     engines: {node: ^14 || ^16 || >=18}
@@ -1504,6 +1513,12 @@ packages:
 
   '@csstools/selector-specificity@3.0.1':
     resolution: {integrity: sha512-NPljRHkq4a14YzZ3YD406uaxh7s0g6eAq3L9aLOWywoqe8PkYamAvtsh7KNX6c++ihDrJ0RiU+/z7rGnhlZ5ww==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss-selector-parser: ^6.0.13
+
+  '@csstools/selector-specificity@3.1.1':
+    resolution: {integrity: sha512-a7cxGcJ2wIlMFLlh8z2ONm+715QkPHiyJcxwQlKOz/03GPw1COpfhcmC9wm4xlZfp//jWHNNMwzjtqHXVWU9KA==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       postcss-selector-parser: ^6.0.13
@@ -2071,10 +2086,10 @@ packages:
     peerDependencies:
       solid-js: '>=1.8.4'
 
-  '@solidjs/router@0.9.1':
-    resolution: {integrity: sha512-kRY75piOQsyoH75E/RP6lr7uVGFCjeeCCCJx7Z2D1Vc6+I1yFQjLCvE+6agXGwqDoWi6vbETP1g7gmp/L1mNLg==}
+  '@solidjs/router@0.13.3':
+    resolution: {integrity: sha512-p8zznlvnN3KySMXqT8irhubgDNTETNa/guaGHU/cZl7kuiPO3PmkWNYfoNCygtEpoxLmLpf62/ZKeyhFdZexsw==}
     peerDependencies:
-      solid-js: ^1.8.4
+      solid-js: ^1.8.6
 
   '@solidjs/testing-library@0.8.5':
     resolution: {integrity: sha512-L9TowCoqdRQGB8ikODh9uHXrYTjCUZseVUG0tIVa836//qeSqXP4m0BKG66v9Zp1y1wRxok5qUW97GwrtEBMcw==}
@@ -5078,8 +5093,8 @@ packages:
     peerDependencies:
       postcss: ^8.2.14
 
-  postcss-nesting@12.0.1:
-    resolution: {integrity: sha512-6LCqCWP9pqwXw/njMvNK0hGY44Fxc4B2EsGbn6xDcxbNRzP8GYoxT7yabVVMLrX3quqOJ9hg2jYMsnkedOf8pA==}
+  postcss-nesting@12.1.4:
+    resolution: {integrity: sha512-CcHOq94K137E+U4Ommu7pexcpp0Tjm24zl4UcqWs1oSLAr5cLI+jLrqQ5h/bdjhMX6cMbzunyustVNnvrzF8Zg==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       postcss: ^8.4
@@ -7766,6 +7781,10 @@ snapshots:
     dependencies:
       postcss: 8.4.33
 
+  '@csstools/selector-resolve-nested@1.1.0(postcss-selector-parser@6.0.15)':
+    dependencies:
+      postcss-selector-parser: 6.0.15
+
   '@csstools/selector-specificity@3.0.0(postcss-selector-parser@6.0.13)':
     dependencies:
       postcss-selector-parser: 6.0.13
@@ -7775,6 +7794,10 @@ snapshots:
       postcss-selector-parser: 6.0.13
 
   '@csstools/selector-specificity@3.0.1(postcss-selector-parser@6.0.15)':
+    dependencies:
+      postcss-selector-parser: 6.0.15
+
+  '@csstools/selector-specificity@3.1.1(postcss-selector-parser@6.0.15)':
     dependencies:
       postcss-selector-parser: 6.0.15
 
@@ -8345,13 +8368,13 @@ snapshots:
     dependencies:
       solid-js: 1.8.11
 
-  '@solidjs/router@0.9.1(solid-js@1.8.11)':
+  '@solidjs/router@0.13.3(solid-js@1.8.11)':
     dependencies:
       solid-js: 1.8.11
 
-  '@solidjs/testing-library@0.8.5(@solidjs/router@0.9.1(solid-js@1.8.11))(solid-js@1.8.11)':
+  '@solidjs/testing-library@0.8.5(@solidjs/router@0.13.3(solid-js@1.8.11))(solid-js@1.8.11)':
     dependencies:
-      '@solidjs/router': 0.9.1(solid-js@1.8.11)
+      '@solidjs/router': 0.13.3(solid-js@1.8.11)
       '@testing-library/dom': 9.3.4
       solid-js: 1.8.11
 
@@ -11748,11 +11771,12 @@ snapshots:
       postcss: 8.4.33
       postcss-selector-parser: 6.0.13
 
-  postcss-nesting@12.0.1(postcss@8.4.33):
+  postcss-nesting@12.1.4(postcss@8.4.33):
     dependencies:
-      '@csstools/selector-specificity': 3.0.0(postcss-selector-parser@6.0.13)
+      '@csstools/selector-resolve-nested': 1.1.0(postcss-selector-parser@6.0.15)
+      '@csstools/selector-specificity': 3.1.1(postcss-selector-parser@6.0.15)
       postcss: 8.4.33
-      postcss-selector-parser: 6.0.13
+      postcss-selector-parser: 6.0.15
 
   postcss-opacity-percentage@2.0.0(postcss@8.4.33):
     dependencies:
@@ -11826,7 +11850,7 @@ snapshots:
       postcss-image-set-function: 6.0.1(postcss@8.4.33)
       postcss-lab-function: 6.0.7(postcss@8.4.33)
       postcss-logical: 7.0.0(postcss@8.4.33)
-      postcss-nesting: 12.0.1(postcss@8.4.33)
+      postcss-nesting: 12.1.4(postcss@8.4.33)
       postcss-opacity-percentage: 2.0.0(postcss@8.4.33)
       postcss-overflow-shorthand: 5.0.0(postcss@8.4.33)
       postcss-page-break: 3.0.4(postcss@8.4.33)

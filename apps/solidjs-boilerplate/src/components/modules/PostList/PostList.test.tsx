@@ -1,7 +1,7 @@
 import type { JSX } from 'solid-js';
 
 import { MetaProvider } from '@solidjs/meta';
-import { Router } from '@solidjs/router';
+import { Route, Router } from '@solidjs/router';
 import { render, renderHook, screen, waitFor } from '@solidjs/testing-library';
 import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
 import { describe, test, beforeEach } from 'vitest';
@@ -17,7 +17,12 @@ describe('PostList component', () => {
       wrapper: props => (
         <MetaProvider>
           <QueryClientProvider client={queryClient}>
-            <Router>{props.children}</Router>
+            <Router
+              // eslint-disable-next-line @typescript-eslint/no-shadow
+              root={props => <>{props.children}</>}
+            >
+              <Route path="/" component={() => <>{props.children}</>} />
+            </Router>
           </QueryClientProvider>
         </MetaProvider>
       ),
@@ -40,7 +45,12 @@ describe('PostList component', () => {
     // @ https://github.com/testing-library/react-hooks-testing-library/issues/23#issuecomment-477542354
     const wrapper = (props: { children: JSX.Element }) => (
       <QueryClientProvider client={queryClient}>
-        <Router>{props.children}</Router>
+        <Router
+          // eslint-disable-next-line @typescript-eslint/no-shadow
+          root={props => <>{props.children}</>}
+        >
+          <Route path="/" component={() => <>{props.children}</>} />
+        </Router>
       </QueryClientProvider>
     );
 

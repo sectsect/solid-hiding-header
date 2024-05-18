@@ -1,5 +1,5 @@
 import { MetaProvider } from '@solidjs/meta';
-import { Router } from '@solidjs/router';
+import { Route, Router } from '@solidjs/router';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { render, screen } from '@solidjs/testing-library';
 import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
@@ -7,8 +7,8 @@ import { expect, describe, test } from 'vitest';
 
 import HomeContent from '@/components/modules/HomeContent/HomeContent';
 
-describe('Footer component', () => {
-  test('should has copyright text', () => {
+describe('HomeContent component', () => {
+  test('should has heading text', () => {
     const queryClient = new QueryClient();
 
     // const result = render(() => <HomeContent />);
@@ -16,7 +16,12 @@ describe('Footer component', () => {
       wrapper: props => (
         <MetaProvider>
           <QueryClientProvider client={queryClient}>
-            <Router>{props.children}</Router>
+            <Router
+              // eslint-disable-next-line @typescript-eslint/no-shadow
+              root={props => <>{props.children}</>}
+            >
+              <Route path="/" component={() => <>{props.children}</>} />
+            </Router>
           </QueryClientProvider>
         </MetaProvider>
       ),
