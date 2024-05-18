@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.20
+
+### Patch Changes
+
+- [`512e3d4`](https://github.com/sectsect/solid-hiding-header/commit/512e3d4b974091d9a382aba5b436bda4ef823993) Thanks [@sectsect](https://github.com/sectsect)! - migrate '@solidjs/router' to v0.13.x
+
+  - chore: update '@solidjs/router' to v0.13.3
+  - test: add support for tests on '@solidjs/router' v0.13.x or higher
+  - chore: add missing package 'postcss-nesting'
+
 ## 2.0.19
 
 ### Patch Changes
