@@ -2,27 +2,20 @@ import type { Component } from 'solid-js';
 import { Switch, Match, For } from 'solid-js';
 
 import { A } from '@solidjs/router';
-import { createQuery } from '@tanstack/solid-query';
 import toast from 'solid-toast';
 
 import Head from '@/components/modules/Head/Head';
-import type { Post } from '@/types/api/post.interface';
-
-const apiEndpointUrl = import.meta.env.VITE_PUBLIC_API_URL;
-
-const fetchData = async (): Promise<Post[]> =>
-  (await fetch(`${apiEndpointUrl}/posts`)).json();
+import useFetchPostList from '@/hooks/useFetchPostList';
 
 const PostList: Component = () => {
   // w/ createQuery() on '@tanstack/solid-query'
-  const query = createQuery(() => ({
-    queryKey: ['/posts'],
-    queryFn: fetchData,
-  }));
+  const query = useFetchPostList();
 
   if (query.isError) {
     toast.error('Failed to fetch data.');
   }
+
+  console.log(query);
 
   // w/ createResource()
   // const [posts, { refetch }] = createResource<Post[]>(fetchData);
