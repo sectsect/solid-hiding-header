@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.21
+
+### Patch Changes
+
+- [`478e30a`](https://github.com/sectsect/solid-hiding-header/commit/478e30aa55e09b81acaf455d9d55bb6d2a636b18) Thanks [@sectsect](https://github.com/sectsect)! - add testing for response 500 error
+
+  - add package msw to mock the API response
+
 ## 2.0.20
 
 ### Patch Changes
