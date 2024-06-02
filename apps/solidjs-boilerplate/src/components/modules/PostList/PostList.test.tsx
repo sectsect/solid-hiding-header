@@ -4,15 +4,47 @@ import { MetaProvider } from '@solidjs/meta';
 import { Route, Router } from '@solidjs/router';
 import { render, renderHook, screen, waitFor } from '@solidjs/testing-library';
 import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
-import { describe, test, beforeEach } from 'vitest';
+import { HttpResponse, http } from 'msw';
+import toast from 'solid-toast';
+import { describe, expect, test, vi } from 'vitest';
 
 import PostList from '@/components/modules/PostList/PostList';
 import useFetchPostList from '@/hooks/useFetchPostList';
+import { server } from '@/mocks/server';
+
+const apiEndpointUrl = import.meta.env.VITE_PUBLIC_API_URL;
+
+vi.mock('solid-toast', () => ({
+  default: {
+    error: vi.fn(),
+  },
+}));
 
 describe('PostList component', () => {
-  const queryClient = new QueryClient();
+  // const queryClient = new QueryClient({
+  //   defaultOptions: { queries: { retry: false } },
+  // });
 
-  beforeEach(() => {
+  // beforeEach(() => {
+  //   render(() => <PostList />, {
+  //     wrapper: props => (
+  //       <MetaProvider>
+  //         <QueryClientProvider client={queryClient}>
+  //           <Router
+  //             // eslint-disable-next-line @typescript-eslint/no-shadow
+  //             root={props => <>{props.children}</>}
+  //           >
+  //             <Route path="/" component={() => <>{props.children}</>} />
+  //           </Router>
+  //         </QueryClientProvider>
+  //       </MetaProvider>
+  //     ),
+  //   });
+  // });
+
+  test('should render "Loading..." element before Data Fetching', async () => {
+    const queryClient = new QueryClient();
+
     render(() => <PostList />, {
       wrapper: props => (
         <MetaProvider>
@@ -27,9 +59,7 @@ describe('PostList component', () => {
         </MetaProvider>
       ),
     });
-  });
 
-  test('should render "Loading..." element before Data Fetching', async () => {
     // screen.getByRole('button', { name: '' });
     const loadingEle = screen.getByText('Loading...'); // substring match
     expect(loadingEle).toBeInTheDocument();
@@ -40,6 +70,23 @@ describe('PostList component', () => {
   // });
 
   test('should success to fetch data', async () => {
+    const queryClient = new QueryClient();
+
+    render(() => <PostList />, {
+      wrapper: props => (
+        <MetaProvider>
+          <QueryClientProvider client={queryClient}>
+            <Router
+              // eslint-disable-next-line @typescript-eslint/no-shadow
+              root={props => <>{props.children}</>}
+            >
+              <Route path="/" component={() => <>{props.children}</>} />
+            </Router>
+          </QueryClientProvider>
+        </MetaProvider>
+      ),
+    });
+
     // expect(await screen.findByText(/qui est esse/)).toBeInTheDocument();
 
     // @ https://github.com/testing-library/react-hooks-testing-library/issues/23#issuecomment-477542354
@@ -63,14 +110,77 @@ describe('PostList component', () => {
     await waitFor(() => {
       expect(result.data?.length).toBe(100);
     });
+  });
 
-    // await waitFor(async () => {
-    //   if (!result.isSuccess) {
-    //     throw Error('wait');
-    //   }
+  test('should handle API call failure', async () => {
+    const errorMessage = 'Failed to fetch data.';
+    const toastErrorSpy = vi.spyOn(toast, 'error');
 
-    //   // expect(await screen.findByText(/qui est esse/)).toBeInTheDocument();
-    //   expect(screen.getByText(/qui est esse/)).toBeInTheDocument();
-    // });
+    server.use(
+      http.get(
+        `${apiEndpointUrl}/posts`,
+        () =>
+          new HttpResponse(null, {
+            status: 500,
+          }),
+      ),
+    );
+
+    const queryClient = new QueryClient({
+      defaultOptions: { queries: { retry: false } }, // @ https://github.com/TanStack/query/discussions/2300#discussioncomment-811768
+    });
+
+    render(() => <PostList />, {
+      wrapper: props => (
+        <MetaProvider>
+          <QueryClientProvider client={queryClient}>
+            <Router
+              // eslint-disable-next-line @typescript-eslint/no-shadow
+              root={props => <>{props.children}</>}
+            >
+              <Route path="/" component={() => <>{props.children}</>} />
+            </Router>
+          </QueryClientProvider>
+        </MetaProvider>
+      ),
+    });
+
+    const wrapper = (props: { children: JSX.Element }) => (
+      <QueryClientProvider client={queryClient}>
+        <Router
+          // eslint-disable-next-line @typescript-eslint/no-shadow
+          root={props => <>{props.children}</>}
+        >
+          <Route
+            path="/"
+            component={() => (
+              <>
+                {props.children}
+                {/* <Toaster position="bottom-center" /> */}
+              </>
+            )}
+          />
+        </Router>
+      </QueryClientProvider>
+    );
+
+    // screen.getByRole('');
+    const { result } = renderHook(() => useFetchPostList(), {
+      wrapper,
+    });
+
+    await waitFor(() => expect(result.isError).toBe(true));
+
+    await waitFor(() => {
+      expect(result.error).toEqual(Error('Failed to fetch data'));
+    });
+
+    await waitFor(() => {
+      expect(toastErrorSpy).toHaveBeenCalledWith(errorMessage);
+    });
+
+    // expect(
+    //   await screen.findByText('Failed to fetch data.'),
+    // ).toBeInTheDocument();
   });
 });

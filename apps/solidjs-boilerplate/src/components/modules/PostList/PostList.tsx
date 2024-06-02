@@ -1,28 +1,21 @@
 import type { Component } from 'solid-js';
-import { Switch, Match, For } from 'solid-js';
+import { ErrorBoundary, Suspense, For, createEffect } from 'solid-js';
 
 import { A } from '@solidjs/router';
-import { createQuery } from '@tanstack/solid-query';
 import toast from 'solid-toast';
 
 import Head from '@/components/modules/Head/Head';
-import type { Post } from '@/types/api/post.interface';
-
-const apiEndpointUrl = import.meta.env.VITE_PUBLIC_API_URL;
-
-const fetchData = async (): Promise<Post[]> =>
-  (await fetch(`${apiEndpointUrl}/posts`)).json();
+import useFetchPostList from '@/hooks/useFetchPostList';
 
 const PostList: Component = () => {
   // w/ createQuery() on '@tanstack/solid-query'
-  const query = createQuery(() => ({
-    queryKey: ['/posts'],
-    queryFn: fetchData,
-  }));
+  const query = useFetchPostList();
 
-  if (query.isError) {
-    toast.error('Failed to fetch data.');
-  }
+  createEffect(() => {
+    if (query.isError) {
+      toast.error('Failed to fetch data.');
+    }
+  });
 
   // w/ createResource()
   // const [posts, { refetch }] = createResource<Post[]>(fetchData);
@@ -37,14 +30,10 @@ const PostList: Component = () => {
 
       <section>
         <div class="inner">
-          <Switch>
-            <Match when={query.isLoading}>
-              <div>Loading...</div>
-            </Match>
-            <Match when={query.isError}>
-              <div>Error: {(query.error as Error).message}</div>
-            </Match>
-            <Match when={query.isSuccess}>
+          <ErrorBoundary
+            fallback={<div>Error: {(query.error as Error).message}</div>}
+          >
+            <Suspense fallback={<div>Loading...</div>}>
               <ul>
                 <For each={query.data}>
                   {post => (
@@ -54,8 +43,8 @@ const PostList: Component = () => {
                   )}
                 </For>
               </ul>
-            </Match>
-          </Switch>
+            </Suspense>
+          </ErrorBoundary>
         </div>
       </section>
 
