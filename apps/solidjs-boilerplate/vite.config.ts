@@ -35,6 +35,25 @@ export default defineConfig({
       all: false,
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
+      exclude: [
+        'coverage/**',
+        'dist/**',
+        '**/[.]**',
+        'packages/*/test?(s)/**',
+        '**/*.d.ts',
+        '**/virtual:*',
+        '**/__x00__*',
+        '**/\x00*',
+        'cypress/**',
+        'test?(s)/**',
+        'test?(-*).?(c|m)[jt]s?(x)',
+        '**/*{.,-}{test,spec}?(-d).?(c|m)[jt]s?(x)',
+        '**/__tests__/**',
+        '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
+        '**/vitest.{workspace,projects}.[jt]s?(on)',
+        '**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}',
+        '**/mocks/**',
+      ],
     },
     // solid needs to be inline to work around
     // a resolution issue in vitest:
@@ -52,6 +71,7 @@ export default defineConfig({
       '**/.{idea,git,cache,output,temp}/**',
       '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress}.config.*',
       '**/e2e/**', // Additional e2e directory for Playwright.
+      '**/mocks/**',
     ],
     deps: {}, // @ https://qiita.com/Stead08/items/762093fe86999fec4e80
   },
