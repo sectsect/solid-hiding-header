@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { ErrorBoundary, Suspense, For } from 'solid-js';
+import { ErrorBoundary, Suspense, For, createEffect } from 'solid-js';
 
 import { A } from '@solidjs/router';
 import toast from 'solid-toast';
@@ -11,9 +11,11 @@ const PostList: Component = () => {
   // w/ createQuery() on '@tanstack/solid-query'
   const query = useFetchPostList();
 
-  if (query.isError) {
-    toast.error('Failed to fetch data.');
-  }
+  createEffect(() => {
+    if (query.isError) {
+      toast.error('Failed to fetch data.');
+    }
+  });
 
   // w/ createResource()
   // const [posts, { refetch }] = createResource<Post[]>(fetchData);

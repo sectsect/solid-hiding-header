@@ -4,10 +4,21 @@ import { MetaProvider } from '@solidjs/meta';
 import { Route, Router } from '@solidjs/router';
 import { render, renderHook, screen, waitFor } from '@solidjs/testing-library';
 import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
-import { describe, test, vi } from 'vitest';
+import { HttpResponse, http } from 'msw';
+import toast from 'solid-toast';
+import { describe, expect, test, vi } from 'vitest';
 
 import PostList from '@/components/modules/PostList/PostList';
 import useFetchPostList from '@/hooks/useFetchPostList';
+import { server } from '@/mocks/server';
+
+const apiEndpointUrl = import.meta.env.VITE_PUBLIC_API_URL;
+
+vi.mock('solid-toast', () => ({
+  default: {
+    error: vi.fn(),
+  },
+}));
 
 describe('PostList component', () => {
   // const queryClient = new QueryClient({
@@ -102,24 +113,18 @@ describe('PostList component', () => {
   });
 
   test('should handle API call failure', async () => {
-    // Mock the API call to reject
-    // ⚠ `vi.mock` is "hoisted" @ https://vitest.dev/api/vi.html
-    // try vi.doMock. It works the same way but isn't hoisted.
-    // https://vitest.dev/api/vi.html#vi-domock
-    // vi.doMock('@/hooks/useFetchPostList', () => ({
-    //   default: vi.fn().mockRejectedValue({ status: 'error' }),
-    // }));
+    const errorMessage = 'Failed to fetch data.';
+    const toastErrorSpy = vi.spyOn(toast, 'error');
 
-    // Mock the API call to reject
-    vi.doMock('@/hooks/useFetchPostList', () => ({
-      default: vi.fn().mockReturnValue({
-        // data: undefined,
-        isLoading: false,
-        isError: true,
-        error: { status: 'error' },
-        status: 'error',
-      }),
-    }));
+    server.use(
+      http.get(
+        `${apiEndpointUrl}/posts`,
+        () =>
+          new HttpResponse(null, {
+            status: 500,
+          }),
+      ),
+    );
 
     const queryClient = new QueryClient({
       defaultOptions: { queries: { retry: false } }, // @ https://github.com/TanStack/query/discussions/2300#discussioncomment-811768
@@ -146,28 +151,36 @@ describe('PostList component', () => {
           // eslint-disable-next-line @typescript-eslint/no-shadow
           root={props => <>{props.children}</>}
         >
-          <Route path="/" component={() => <>{props.children}</>} />
+          <Route
+            path="/"
+            component={() => (
+              <>
+                {props.children}
+                {/* <Toaster position="bottom-center" /> */}
+              </>
+            )}
+          />
         </Router>
       </QueryClientProvider>
     );
 
+    // screen.getByRole('');
     const { result } = renderHook(() => useFetchPostList(), {
       wrapper,
     });
 
-    await waitFor(() => result.isError);
-
-    expect(result.data).toEqual(undefined);
-
-    // await waitFor(() => {
-    //   expect(result.isError).toBe(true);
-    // });
+    await waitFor(() => expect(result.isError).toBe(true));
 
     await waitFor(() => {
-      expect(result.error).toEqual({ status: 'error' });
+      expect(result.error).toEqual(Error('Failed to fetch data'));
     });
 
-    // expect(result.data).toBeUndefined();
-    // expect(screen.getByText('Error: Failed to fetch data')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(toastErrorSpy).toHaveBeenCalledWith(errorMessage);
+    });
+
+    // expect(
+    //   await screen.findByText('Failed to fetch data.'),
+    // ).toBeInTheDocument();
   });
 });
