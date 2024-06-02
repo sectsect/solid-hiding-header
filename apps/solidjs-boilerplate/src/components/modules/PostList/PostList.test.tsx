@@ -106,8 +106,19 @@ describe('PostList component', () => {
     // ⚠ `vi.mock` is "hoisted" @ https://vitest.dev/api/vi.html
     // try vi.doMock. It works the same way but isn't hoisted.
     // https://vitest.dev/api/vi.html#vi-domock
+    // vi.doMock('@/hooks/useFetchPostList', () => ({
+    //   default: vi.fn().mockRejectedValue({ status: 'error' }),
+    // }));
+
+    // Mock the API call to reject
     vi.doMock('@/hooks/useFetchPostList', () => ({
-      default: vi.fn().mockRejectedValue({ status: 'error' }),
+      default: vi.fn().mockReturnValue({
+        // data: undefined,
+        isLoading: false,
+        isError: true,
+        error: { status: 'error' },
+        status: 'error',
+      }),
     }));
 
     const queryClient = new QueryClient({
@@ -150,10 +161,13 @@ describe('PostList component', () => {
 
     // await waitFor(() => {
     //   expect(result.isError).toBe(true);
-    //   // expect(result.error).toEqual({ status: 'error' });
     // });
 
+    await waitFor(() => {
+      expect(result.error).toEqual({ status: 'error' });
+    });
+
     // expect(result.data).toBeUndefined();
-    // expect(screen.getByText('Error fetching data')).toBeInTheDocument();
+    // expect(screen.getByText('Error: Failed to fetch data')).toBeInTheDocument();
   });
 });

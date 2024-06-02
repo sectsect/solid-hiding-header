@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { Switch, Match, For } from 'solid-js';
+import { ErrorBoundary, Suspense, For } from 'solid-js';
 
 import { A } from '@solidjs/router';
 import toast from 'solid-toast';
@@ -15,8 +15,6 @@ const PostList: Component = () => {
     toast.error('Failed to fetch data.');
   }
 
-  console.log(query);
-
   // w/ createResource()
   // const [posts, { refetch }] = createResource<Post[]>(fetchData);
 
@@ -30,14 +28,10 @@ const PostList: Component = () => {
 
       <section>
         <div class="inner">
-          <Switch>
-            <Match when={query.isLoading}>
-              <div>Loading...</div>
-            </Match>
-            <Match when={query.isError}>
-              <div>Error: {(query.error as Error).message}</div>
-            </Match>
-            <Match when={query.isSuccess}>
+          <ErrorBoundary
+            fallback={<div>Error: {(query.error as Error).message}</div>}
+          >
+            <Suspense fallback={<div>Loading...</div>}>
               <ul>
                 <For each={query.data}>
                   {post => (
@@ -47,8 +41,8 @@ const PostList: Component = () => {
                   )}
                 </For>
               </ul>
-            </Match>
-          </Switch>
+            </Suspense>
+          </ErrorBoundary>
         </div>
       </section>
 
