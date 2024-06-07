@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.22
+
+### Patch Changes
+
+- [`8a58767`](https://github.com/sectsect/solid-hiding-header/commit/8a5876723c78f65c3041d4eb94737aee1e10772f) Thanks [@sectsect](https://github.com/sectsect)! - Add mock for testing / update Turborepo to v2.x.x
+
+  - test: added mocking api response to test
+  - refactor(app): code refactor
+  - chore: update turbo to v2
+
 ## 2.0.21
 
 ### Patch Changes
