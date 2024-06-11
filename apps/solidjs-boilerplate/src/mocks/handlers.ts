@@ -18,4 +18,7 @@ export const handlers = [
   http.get(`${apiEndpointUrl}/posts`, () => {
     return HttpResponse.json(posts);
   }),
+  http.get(`${apiEndpointUrl}/posts/1`, () => {
+    return HttpResponse.json(posts[0]);
+  }),
 ];

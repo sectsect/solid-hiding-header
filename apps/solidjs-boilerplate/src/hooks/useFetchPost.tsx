@@ -27,7 +27,6 @@ const useFetchPost = (id: string) => {
       if (!result.ok) throw new Error('Failed to fetch data');
       return result.json();
     },
-
     staleTime: 1000 * 60 * 5, // 5 minutes
     throwOnError: true, // Throw an error if the query fails
   }));
