@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.0.23
+
+### Patch Changes
+
+- [`b863421`](https://github.com/sectsect/solid-hiding-header/commit/b86342100997c943e03ccf7306eb6d93a0726fcc) Thanks [@sectsect](https://github.com/sectsect)! - add testing for component 'PostContent'
+
+  - add testing for component 'PostContent'
+  - add testing for component 'PostList'
+
 ## 2.0.22
 
 ### Patch Changes
