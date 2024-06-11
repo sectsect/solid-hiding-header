@@ -1,13 +1,19 @@
 import type { JSX } from 'solid-js';
 
 import { MetaProvider } from '@solidjs/meta';
-import { Route, Router } from '@solidjs/router';
+import {
+  Route,
+  Router,
+  MemoryRouter,
+  createMemoryHistory,
+} from '@solidjs/router';
 import { render, renderHook, screen, waitFor } from '@solidjs/testing-library';
 import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
 import { HttpResponse, http } from 'msw';
 import toast from 'solid-toast';
 import { describe, expect, test, vi } from 'vitest';
 
+import App from '@/App';
 import PostList from '@/components/modules/PostList/PostList';
 import useFetchPostList from '@/hooks/useFetchPostList';
 import { server } from '@/mocks/server';
@@ -18,6 +24,7 @@ vi.mock('solid-toast', () => ({
   default: {
     error: vi.fn(),
   },
+  Toaster: vi.fn(),
 }));
 
 describe('PostList component', () => {
@@ -109,6 +116,46 @@ describe('PostList component', () => {
 
     await waitFor(() => {
       expect(result.data?.length).toBe(100);
+    });
+  });
+
+  test('should render post titles', async () => {
+    // Mock window.ResizeObserver @ https://vitest.dev/guide/mocking.html#globals
+    const ResizeObserverMock = vi.fn(() => ({
+      disconnect: vi.fn(),
+      observe: vi.fn(),
+      takeRecords: vi.fn(),
+      unobserve: vi.fn(),
+    }));
+    vi.stubGlobal('ResizeObserver', ResizeObserverMock);
+    // now you can access it as `ResizeObserver` or `window.ResizeObserver`
+
+    const queryClient = new QueryClient();
+
+    // @see https://github.com/solidjs/solid-router/issues/335#issuecomment-1918115042
+    const history = createMemoryHistory();
+    history.set({ value: '/post' });
+
+    render(() => (
+      <MetaProvider>
+        <QueryClientProvider client={queryClient}>
+          <MemoryRouter root={App} history={history}>
+            <Route path="/post" component={PostList} />
+          </MemoryRouter>
+        </QueryClientProvider>
+      </MetaProvider>
+    ));
+
+    await waitFor(async () => {
+      expect(
+        screen.getByText(
+          'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+        ),
+      ).toBeInTheDocument();
+    });
+
+    await waitFor(async () => {
+      expect(screen.getByText('nesciunt quas odio')).toBeInTheDocument();
     });
   });
 
