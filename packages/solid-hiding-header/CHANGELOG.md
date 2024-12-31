@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.0.24
+
+### Patch Changes
+
+- [#37](https://github.com/sectsect/solid-hiding-header/pull/37) [`2032417`](https://github.com/sectsect/solid-hiding-header/commit/20324175f1f4b2e78c8c16ca44627564f4364fbf) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore: update vite to v5.3.x
+  - chore: bump pnpm version
+  - chore: update vitest to v2.x.x
+  - chore(deps): update dependencies
+  - ci(husky): update hooks following v9 deprecations
+  - ci: update GitHub Actions workflow
+
 ## 2.0.23
 
 ### Patch Changes
