@@ -9,6 +9,11 @@ node_modules
 # Testing
 /coverage
 
+# Codecov uploader and integrity signatures
+codecov
+codecov.SHA256SUM
+codecov.SHA256SUM.sig
+
 # Next.js
 .next
 out
