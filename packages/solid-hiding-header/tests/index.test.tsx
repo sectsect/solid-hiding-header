@@ -1,6 +1,5 @@
-import { render, screen, within } from '@solidjs/testing-library';
+import { render, screen } from '@solidjs/testing-library';
 import { expect, describe, test, vi, beforeAll } from 'vitest';
-import { mount } from '@vue/test-utils';
 import { HidingHeader } from '@/index';
 
 describe('HidingHeader component', () => {
@@ -17,33 +16,35 @@ describe('HidingHeader component', () => {
   });
 
   test('should exists', () => {
-    const wrapper = mount(HidingHeader)
-    expect(wrapper).toBeTruthy()
+    const { unmount } = render(() => <HidingHeader>Header</HidingHeader>);
+    const element = screen.getByRole('banner');
+    expect(element).toBeTruthy();
+    unmount();
   });
 
   test('is assigned a <div> tag', () => {
-    render(() => (
+    const { unmount } = render(() => (
       <HidingHeader>Header</HidingHeader>
     ));
-    // screen.getByRole('button', { name: '' });
 
-    const containerElm = screen.getByRole('banner', { name: '' });
+    const containerElm = screen.getByRole('banner');
     console.log(containerElm.tagName);
     expect(containerElm.tagName).toBe('DIV');
+    unmount();
   });
 
   test('is assigned a <header> tag', () => {
-    render(() => (
+    const { unmount } = render(() => (
       <HidingHeader component="header">Header</HidingHeader>
     ));
-    // screen.getByRole('button', { name: '' });
 
-    const containerElm = screen.getByRole('banner', { name: '' });
+    const containerElm = screen.getByRole('banner');
     expect(containerElm.tagName).toBe('HEADER');
+    unmount();
   });
 
   test('Top Level element has correct default class assigned', () => {
-    render(() => (
+    const { unmount } = render(() => (
       <HidingHeader>
         <div class="inner">
           <p>Header</p>
@@ -51,12 +52,13 @@ describe('HidingHeader component', () => {
       </HidingHeader>
     ));
 
-    const containerElm = screen.getByRole('banner', { name: '' });
+    const containerElm = screen.getByRole('banner');
     expect(containerElm).toHaveClass('hidingHeader');
+    unmount();
   });
 
   test('Top Level element has correct default style assigned', () => {
-    render(() => (
+    const { unmount } = render(() => (
       <HidingHeader>
         <div class="inner">
           <p>Header</p>
@@ -64,7 +66,7 @@ describe('HidingHeader component', () => {
       </HidingHeader>
     ));
 
-    const containerElm = screen.getByRole('banner', { name: '' });
+    const containerElm = screen.getByRole('banner');
 
     // Bug for `toHaveStyle()` on CSS Custom Property @ https://github.com/testing-library/jest-dom/issues/280
     // expect(containerElm).toHaveStyle(`--hidingHeader-height: 0px;`);
@@ -79,10 +81,11 @@ describe('HidingHeader component', () => {
     expect(containerElm.style._values).toMatchObject({
       '--hidingHeader-height': '0px',
     });
+    unmount();
   });
 
   test('Top Level element has correct additional classes assigned', () => {
-    render(() => (
+    const { unmount } = render(() => (
       <HidingHeader class="bg-black">
         <div class="inner">
           <p>Header</p>
@@ -90,12 +93,13 @@ describe('HidingHeader component', () => {
       </HidingHeader>
     ));
 
-    const containerElm = screen.getByRole('banner', { name: '' });
+    const containerElm = screen.getByRole('banner');
     expect(containerElm).toHaveClass('hidingHeader', 'bg-black');
+    unmount();
   });
 
   test('inner element has correct default class assigned', () => {
-    render(() => (
+    const { unmount } = render(() => (
       <HidingHeader>
         <div class="inner">
           <p>Header</p>
@@ -103,12 +107,14 @@ describe('HidingHeader component', () => {
       </HidingHeader>
     ));
 
-    const innerElm = screen.getByRole('banner', { name: '' }).querySelector('div');
+    const containerElm = screen.getByRole('banner');
+    const innerElm = containerElm.querySelector('div');
     expect(innerElm).toHaveClass('hidingHeader-in');
+    unmount();
   });
 
   test('inner element has correct additional classes assigned', () => {
-    render(() => (
+    const { unmount } = render(() => (
       <HidingHeader innerClass="bg-black">
         <div class="inner">
           <p>Header</p>
@@ -116,12 +122,14 @@ describe('HidingHeader component', () => {
       </HidingHeader>
     ));
 
-    const innerElm = screen.getByRole('banner', { name: '' }).querySelector('div');
+    const containerElm = screen.getByRole('banner');
+    const innerElm = containerElm.querySelector('div');
     expect(innerElm).toHaveClass('hidingHeader-in', 'bg-black');
+    unmount();
   });
 
   test('should have a element', () => {
-    render(() => (
+    const { unmount } = render(() => (
       <HidingHeader>
         <div class="inner">
           <p>Header</p>
@@ -129,7 +137,8 @@ describe('HidingHeader component', () => {
       </HidingHeader>
     ));
 
-    const headerElm = screen.getByText(/^Header$/i); // full string match, ignore case
+    const headerElm = screen.getByText('Header'); // Use exact text match instead of regex
     expect(headerElm).toBeInTheDocument();
+    unmount();
   });
 });
