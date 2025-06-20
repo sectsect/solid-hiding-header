@@ -41,7 +41,6 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
-    "test:e2e": "playwright test",
     "build": "rollup -c",
     "watch": "rollup -c --watch",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
