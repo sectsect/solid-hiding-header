@@ -19,7 +19,8 @@
     },
     "test:e2e": {
       "dependsOn": ["^build"],
-      "cache": false
+      "outputs": ["playwright-report/**", "test-results/**"],
+      "passThroughEnv": ["PLAYWRIGHT_*", "CI"]
     },
     "test:e2e:report": {
       "cache": false
