@@ -1,5 +1,5 @@
 {
-  "version": "2.0.26",
+  "version": "2.0.27",
   "name": "@sect/solid-hiding-header",
   "description": "SolidJS header that disappears on scroll down and appears on scroll up.",
   "license": "MIT",

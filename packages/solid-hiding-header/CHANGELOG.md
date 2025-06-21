@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.27
+
+### Patch Changes
+
+- [`49a5c74`](https://github.com/sectsect/solid-hiding-header/commit/49a5c747884c978087eb6e5748befe62a08ef9cc) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - Potential fix for code scanning alert no. 1: Workflow does not contain permissions
+  - perf(turbo): enable e2e test caching with outputs and env vars
+  - fix(ci): update workflow permissions for changesets action
+
 ## 2.0.26
 
 ### Patch Changes
