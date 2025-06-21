@@ -15,3 +15,4 @@
 - chore(deps): migrate to tailwindcss v4
 - fix(deps): downgrade msw to 2.3.1 for vite 6 compatibility
 - fix: resolve TypeScript module resolution errors
+- ci(workflows): align pnpm version with package.json
