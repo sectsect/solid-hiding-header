@@ -11,6 +11,7 @@
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
+    "test:e2e:report": "playwright show-report",
     "lint": "eslint --ext .ts,tsx",
     "lint:fix": "eslint --fix --ext .ts,tsx",
     "lint:css": "stylelint src/**/*{,.*}.{css,scss} --fix",
