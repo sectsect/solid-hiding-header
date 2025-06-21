@@ -5,6 +5,7 @@
     "test": "turbo test",
     "test:watch": "turbo test:watch",
     "test:e2e": "turbo test:e2e --filter=solidjs-boilerplate",
+    "test:e2e:report": "turbo test:e2e:report --filter=solidjs-boilerplate",
     "coverage": "turbo coverage",
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",

@@ -21,6 +21,9 @@
       "dependsOn": ["^build"],
       "cache": false
     },
+    "test:e2e:report": {
+      "cache": false
+    },
     "coverage": {
       "outputs": ["coverage/**"],
       "dependsOn": ["^build"]
