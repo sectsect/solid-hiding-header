@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.0.26
+
+### Patch Changes
+
+- [#43](https://github.com/sectsect/solid-hiding-header/pull/43) [`a264411`](https://github.com/sectsect/solid-hiding-header/commit/a264411d3f939c605faf840aecb582839097b38d) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - feat(e2e): add playwright show-report script
+  - ci(release): add playwright report upload as artifact
+
 ## 2.0.25
 
 ### Patch Changes
