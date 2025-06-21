@@ -1,10 +1,52 @@
-@import url('base/settings.css');
-@import url('base/svg.css');
-@import url('libs/hiding-header.css');
+@import url('base/settings.css') layer(base);
+@import url('base/svg.css') layer(base);
+@import url('libs/hiding-header.css') layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  /* remove `line-height` from `text-{size}` */
+  --text-*: initial;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+  --text-6xl: 60px;
+  --text-7xl: 72px;
+  --text-8xl: 96px;
+  --text-9xl: 128px;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility inner {
+  @apply w-full px-4 md:max-w-(--breakpoint-2xl) md:px-16 md:mx-auto;
+  /* @media (--viewport-medium) {
+
+  } */
+}
+
 /* @ https://tailwindcss.jp/docs/functions-and-directives#layer */
 @layer base {
   html {
@@ -45,21 +87,17 @@
 
 @layer components {
   body {
-    @apply font-sans text-base font-bold leading-normal text-black antialiased;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
   }
 
   #root {
-    @apply flex flex-col min-h-screen;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
-
-  article {
-    @apply h-article;
-  }
-
-  .inner {
-    @apply w-full px-4 md:max-w-screen-2xl md:px-16 md:mx-auto;
-  }
-  /* @media (--viewport-medium) {
-
-  } */
 }

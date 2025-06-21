@@ -3,9 +3,10 @@
 import solidPlugin from 'vite-plugin-solid';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [solidPlugin(), tsconfigPaths()],
+  plugins: [solidPlugin(), tsconfigPaths(), tailwindcss()],
   server: {
     port: 3000,
   },
