@@ -1,4 +1,3 @@
-import type { CreateQueryResult } from '@tanstack/solid-query';
 import { createQuery } from '@tanstack/solid-query';
 
 import type { Post } from '@/types/api/post.interface';
@@ -16,7 +15,7 @@ const useFetchPost = (id: string) => {
   //   queryFn: fetchData,
   // }));
 
-  const query: CreateQueryResult<Post, Error> = createQuery(() => ({
+  const query = createQuery(() => ({
     // Array Keys with variables
     // @ https://tanstack.com/query/v4/docs/react/guides/query-keys?from=reactQueryV3&original=https%3A%2F%2Freact-query-v3.tanstack.com%2Fguides%2Fquery-keys#array-keys-with-variables
     queryKey: [`/posts/`, id],

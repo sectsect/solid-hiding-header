@@ -3,20 +3,20 @@
   "extends": [
     "airbnb-base",
     "plugin:deprecation/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
   ],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
   },
   "settings": {
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
+      "@typescript-eslint/parser": [".ts", ".tsx"],
     },
     "import/resolver": {
       "typescript": {
-        "alwaysTryTypes": true // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
-      }
-    }
+        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+      },
+    },
   },
   "overrides": [
     // Configuration for TypeScript files
@@ -28,23 +28,21 @@
         "@typescript-eslint",
         "solid",
         "unused-imports",
-        "tailwindcss",
         // "simple-import-sort",
         "eslint-plugin-tsdoc",
         "import",
-        "prettier"
+        "prettier",
       ],
       "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/recommended",
         "plugin:solid/typescript",
         "plugin:jsx-a11y/recommended",
-        "plugin:tailwindcss/recommended",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
-        "project": "./tsconfig.json"
+        "project": "./tsconfig.json",
       },
       "rules": {
         "prettier/prettier": "error",
@@ -53,8 +51,8 @@
         "jsx-a11y/label-has-associated-control": [
           2,
           {
-            "assert": "either" // either check for `htmlFor` or `nesting`
-          }
+            "assert": "either", // either check for `htmlFor` or `nesting`
+          },
         ],
         // "react/require-default-props": "off", // Allow non-defined react props as undefined
         // "react/jsx-props-no-spreading": "off", // _app.tsx uses spread operator and also, react-hook-form
@@ -86,16 +84,16 @@
               {
                 "pattern": "solid-js",
                 "group": "external",
-                "position": "before"
-              }
+                "position": "before",
+              },
             ],
             "pathGroupsExcludedImportTypes": ["solid-js"],
             "newlines-between": "always",
             "alphabetize": {
               "order": "asc",
-              "caseInsensitive": true
-            }
-          }
+              "caseInsensitive": true,
+            },
+          },
         ],
         "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
         "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
@@ -107,14 +105,13 @@
         "unused-imports/no-unused-vars": [
           "error",
           {
-            "argsIgnorePattern": "^_"
-          }
+            "argsIgnorePattern": "^_",
+          },
         ],
         "no-underscore-dangle": "off", // We use _id in our database
         "solid/no-innerhtml": "off",
-        "tailwindcss/no-custom-classname": "off",
-        "tsdoc/syntax": "warn"
-      }
+        "tsdoc/syntax": "warn",
+      },
     },
     // Configuration for testing
     {
@@ -124,17 +121,17 @@
         "plugin:jest/recommended",
         "plugin:jest-formatting/recommended",
         // "plugin:testing-library/react",
-        "plugin:jest-dom/recommended"
-      ]
+        "plugin:jest-dom/recommended",
+      ],
     },
     // Configuration for e2e testing (Cypress)
-    {
-      "files": ["**/*.cy.ts"],
-      "plugins": ["cypress"],
-      "extends": ["plugin:cypress/recommended"],
-      "parserOptions": {
-        "project": "./cypress/tsconfig.json"
-      }
-    }
-  ]
+    // {
+    //   "files": ["**/*.cy.ts"],
+    //   "plugins": ["cypress"],
+    //   "extends": ["plugin:cypress/recommended"],
+    //   "parserOptions": {
+    //     "project": "./cypress/tsconfig.json"
+    //   }
+    // }
+  ],
 }

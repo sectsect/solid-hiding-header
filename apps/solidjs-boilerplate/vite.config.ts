@@ -3,9 +3,10 @@
 import solidPlugin from 'vite-plugin-solid';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [solidPlugin(), tsconfigPaths()],
+  plugins: [solidPlugin(), tsconfigPaths(), tailwindcss()],
   server: {
     port: 3000,
   },
@@ -55,15 +56,15 @@ export default defineConfig({
         '**/mocks/**',
       ],
     },
+    // Enable isolation to prevent test pollution
+    isolate: true,
     // solid needs to be inline to work around
     // a resolution issue in vitest:
-    // deps: {
-    //   inline: [/solid-js/],
-    // },
-    // if you have few tests, try commenting one
-    // or both out to improve performance:
-    // threads: false,
-    // isolate: false,
+    server: {
+      deps: {
+        inline: [/solid-js/],
+      },
+    },
     exclude: [
       '**/node_modules/**',
       '**/dist/**',
@@ -72,8 +73,7 @@ export default defineConfig({
       '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress}.config.*',
       '**/e2e/**', // Additional e2e directory for Playwright.
       '**/mocks/**',
-    ],
-    deps: {}, // @ https://qiita.com/Stead08/items/762093fe86999fec4e80
+    ]
   },
   define: process.env.VITEST ? {} : { global: 'window' },
 });

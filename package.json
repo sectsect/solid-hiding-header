@@ -19,18 +19,18 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.11",
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
-    "@secretlint/secretlint-rule-preset-recommend": "^9.0.0",
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.5",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@secretlint/secretlint-rule-preset-recommend": "^10.1.0",
     "eslint": "^8.57.1",
     "husky": "^9.1.7",
-    "lint-staged": "^15.3.0",
-    "prettier": "^3.4.2",
-    "secretlint": "^9.0.0",
-    "turbo": "^2.3.3"
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.5.3",
+    "secretlint": "^10.1.0",
+    "turbo": "^2.5.4"
   },
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@10.12.1",
   "name": "solid-hiding-header"
 }

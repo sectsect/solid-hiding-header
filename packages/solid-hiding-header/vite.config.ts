@@ -36,15 +36,16 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
     },
+    // Ensure proper cleanup between tests
+    globals: false,
+    // Enable isolation to prevent test pollution
+    isolate: true,
     // solid needs to be inline to work around
     // a resolution issue in vitest:
-    // deps: {
-    //   inline: [/solid-js/],
-    // },
-    // if you have few tests, try commenting one
-    // or both out to improve performance:
-    // threads: false,
-    // isolate: false,
-    deps: {}, // @ https://qiita.com/Stead08/items/762093fe86999fec4e80
+    server: {
+      deps: {
+        inline: [/solid-js/],
+      },
+    },
   },
 });
