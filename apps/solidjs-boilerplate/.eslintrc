@@ -31,7 +31,7 @@
         "@typescript-eslint",
         "solid",
         "unused-imports",
-        "tailwindcss",
+        // "tailwindcss",
         // "simple-import-sort",
         "eslint-plugin-tsdoc",
         "import",
@@ -44,7 +44,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:solid/typescript",
         "plugin:jsx-a11y/recommended",
-        "plugin:tailwindcss/recommended",
+        // "plugin:tailwindcss/recommended",
         "plugin:prettier/recommended"
       ],
       "parser": "@typescript-eslint/parser",
@@ -117,7 +117,7 @@
         ],
         "no-underscore-dangle": "off", // We use _id in our database
         "solid/no-innerhtml": "off",
-        "tailwindcss/no-custom-classname": "off",
+        // "tailwindcss/no-custom-classname": "off",
         "tsdoc/syntax": "warn"
       }
     },
