@@ -87,6 +87,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.8.1
         version: 19.8.1
+      '@commitlint/types':
+        specifier: ^19.8.1
+        version: 19.8.1
       '@playwright/test':
         specifier: ^1.53.2
         version: 1.53.2
