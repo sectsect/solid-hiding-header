@@ -35,7 +35,7 @@ const config = {
       },
     ],
     'custom-media-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-    'custom-property-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+    'custom-property-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*(-\\*)?$',
     'comment-empty-line-before': 'never',
     'declaration-block-no-duplicate-properties': [
       true,
