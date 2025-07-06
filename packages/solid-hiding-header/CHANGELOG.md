@@ -1,11 +1,24 @@
 # Changelog
 
+## 2.0.28
+
+### Patch Changes
+
+- [`c713933`](https://github.com/sectsect/solid-hiding-header/commit/c7139331a52b319be1892bcf21aff5a175dd950c) Thanks [@sectsect](https://github.com/sectsect)! - .
+  - chore(deps): update dependencies
+  - docs: update README.md
+  - chore(deps): update dependencies
+  - chore: remove eslint-plugin-tailwindcss for Tailwind CSS v4
+  - chore: migrate config files to ESModule format
+  - fix: resolve ESLint errors and deprecation warnings
+  - fix: resolve stylelint errors
+  - ci: fix pnpm version error
+
 ## 2.0.27
 
 ### Patch Changes
 
 - [`49a5c74`](https://github.com/sectsect/solid-hiding-header/commit/49a5c747884c978087eb6e5748befe62a08ef9cc) Thanks [@sectsect](https://github.com/sectsect)! - .
-
   - Potential fix for code scanning alert no. 1: Workflow does not contain permissions
   - perf(turbo): enable e2e test caching with outputs and env vars
   - fix(ci): update workflow permissions for changesets action
@@ -15,7 +28,6 @@
 ### Patch Changes
 
 - [#43](https://github.com/sectsect/solid-hiding-header/pull/43) [`a264411`](https://github.com/sectsect/solid-hiding-header/commit/a264411d3f939c605faf840aecb582839097b38d) Thanks [@sectsect](https://github.com/sectsect)! - .
-
   - feat(e2e): add playwright show-report script
   - ci(release): add playwright report upload as artifact
 
@@ -24,7 +36,6 @@
 ### Patch Changes
 
 - [#40](https://github.com/sectsect/solid-hiding-header/pull/40) [`dfe8f35`](https://github.com/sectsect/solid-hiding-header/commit/dfe8f351864dd38d1dcc096b01482a076bccbc58) Thanks [@sectsect](https://github.com/sectsect)! - .
-
   - chore(deps): update dependencies
   - fix: resolve test failures after dependency updates
   - fix(e2e): remove playwright test from library package
@@ -43,7 +54,6 @@
 ### Patch Changes
 
 - [#37](https://github.com/sectsect/solid-hiding-header/pull/37) [`2032417`](https://github.com/sectsect/solid-hiding-header/commit/20324175f1f4b2e78c8c16ca44627564f4364fbf) Thanks [@sectsect](https://github.com/sectsect)! - .
-
   - chore: update vite to v5.3.x
   - chore: bump pnpm version
   - chore: update vitest to v2.x.x
@@ -56,7 +66,6 @@
 ### Patch Changes
 
 - [`b863421`](https://github.com/sectsect/solid-hiding-header/commit/b86342100997c943e03ccf7306eb6d93a0726fcc) Thanks [@sectsect](https://github.com/sectsect)! - add testing for component 'PostContent'
-
   - add testing for component 'PostContent'
   - add testing for component 'PostList'
 
@@ -65,7 +74,6 @@
 ### Patch Changes
 
 - [`8a58767`](https://github.com/sectsect/solid-hiding-header/commit/8a5876723c78f65c3041d4eb94737aee1e10772f) Thanks [@sectsect](https://github.com/sectsect)! - Add mock for testing / update Turborepo to v2.x.x
-
   - test: added mocking api response to test
   - refactor(app): code refactor
   - chore: update turbo to v2
@@ -75,7 +83,6 @@
 ### Patch Changes
 
 - [`478e30a`](https://github.com/sectsect/solid-hiding-header/commit/478e30aa55e09b81acaf455d9d55bb6d2a636b18) Thanks [@sectsect](https://github.com/sectsect)! - add testing for response 500 error
-
   - add package msw to mock the API response
 
 ## 2.0.20
@@ -83,7 +90,6 @@
 ### Patch Changes
 
 - [`512e3d4`](https://github.com/sectsect/solid-hiding-header/commit/512e3d4b974091d9a382aba5b436bda4ef823993) Thanks [@sectsect](https://github.com/sectsect)! - migrate '@solidjs/router' to v0.13.x
-
   - chore: update '@solidjs/router' to v0.13.3
   - test: add support for tests on '@solidjs/router' v0.13.x or higher
   - chore: add missing package 'postcss-nesting'
@@ -105,7 +111,6 @@
 ### Patch Changes
 
 - [`9354afc`](https://github.com/sectsect/solid-hiding-header/commit/9354afc9101c993ea904fb693d213e5b74c184e7) Thanks [@sectsect](https://github.com/sectsect)! - Minor bug fix
-
   - ci: update CI workflow
   - fix: add missing method to destroy instance in cleanup function
   - ci: fix error in workflow
@@ -115,7 +120,6 @@
 ### Patch Changes
 
 - [`020a629`](https://github.com/sectsect/solid-hiding-header/commit/020a629f18f2d68b2653caae971b66579d6a8e4e) Thanks [@sectsect](https://github.com/sectsect)! - improve for tests
-
   - chore: replace deprecated extension in recommendations
   - chore: update dependencies for Vitest
   - test: enhance tests
