@@ -1,6 +1,4 @@
-import { createQuery } from '@tanstack/solid-query';
-
-import type { Post } from '@/types/api/post.interface';
+import { useQuery } from '@tanstack/solid-query';
 
 // import type { Post } from '@/types/api/post.interface';
 
@@ -15,7 +13,7 @@ const useFetchPostList = () => {
   //   queryFn: fetchData,
   // }));
 
-  const query = createQuery(() => ({
+  const query = useQuery(() => ({
     queryKey: ['/posts'],
     queryFn: async () => {
       const result = await fetch(`${apiEndpointUrl}/posts`);

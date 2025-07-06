@@ -1,6 +1,9 @@
-// @ https://stylelint.io/user-guide/example-config
-module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
+/** @type {import('stylelint').Config} */
+const config = {
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-recess-order',
+  ],
   plugins: ['stylelint-prettier'],
   rules: {
     'alpha-value-notation': 'number',
@@ -19,11 +22,20 @@ module.exports = {
           'variants',
           'responsive',
           'screen',
+          'custom-variant',
+          'theme',
+          'utility',
         ],
       },
     ],
+    'at-rule-no-deprecated': [
+      true,
+      {
+        ignoreAtRules: ['apply'],
+      },
+    ],
     'custom-media-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-    'custom-property-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+    'custom-property-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*(-\\*)?$',
     'comment-empty-line-before': 'never',
     'declaration-block-no-duplicate-properties': [
       true,
@@ -37,3 +49,5 @@ module.exports = {
     'selector-class-pattern': null,
   },
 };
+
+export default config;
