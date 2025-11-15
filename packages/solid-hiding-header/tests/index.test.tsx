@@ -12,12 +12,14 @@ import {
 describe('HidingHeader component', () => {
   beforeAll(() => {
     // Mock window.ResizeObserver @ https://vitest.dev/guide/mocking.html#globals
-    const ResizeObserverMock = vi.fn(() => ({
-      disconnect: vi.fn(),
-      observe: vi.fn(),
-      takeRecords: vi.fn(),
-      unobserve: vi.fn(),
-    }));
+    const ResizeObserverMock = vi.fn(function ResizeObserver() {
+      return {
+        disconnect: vi.fn(),
+        observe: vi.fn(),
+        takeRecords: vi.fn(),
+        unobserve: vi.fn(),
+      };
+    });
     vi.stubGlobal('ResizeObserver', ResizeObserverMock);
     // now you can access it as `ResizeObserver` or `window.ResizeObserver`
   });
@@ -78,16 +80,10 @@ describe('HidingHeader component', () => {
     // Bug for `toHaveStyle()` on CSS Custom Property @ https://github.com/testing-library/jest-dom/issues/280
     // expect(containerElm).toHaveStyle(`--hidingHeader-height: 0px;`);
 
-    // const headerRoots = document.getElementsByClassName('hidingHeader');
-    // const style = window.getComputedStyle(headerRoots[0]);
-    // const hidingHeaderHeight = style.getPropertyValue('--hidingHeader-height');
-    // expect(hidingHeaderHeight).toBe('0px');
-
-    // workaround @ https://github.com/testing-library/jest-dom/issues/280#issuecomment-1908657917
-    // @ts-ignore
-    expect(containerElm.style._values).toMatchObject({
-      '--hidingHeader-height': '0px',
-    });
+    // Use getComputedStyle() and getPropertyValue() to check CSS Custom Property
+    const style = window.getComputedStyle(containerElm);
+    const hidingHeaderHeight = style.getPropertyValue('--hidingHeader-height');
+    expect(hidingHeaderHeight).toBe('0px');
     unmount();
   });
 
@@ -228,12 +224,14 @@ describe('HidingHeader component', () => {
 
 describe('HidingHeader hooks', () => {
   beforeAll(() => {
-    const ResizeObserverMock = vi.fn(() => ({
-      disconnect: vi.fn(),
-      observe: vi.fn(),
-      takeRecords: vi.fn(),
-      unobserve: vi.fn(),
-    }));
+    const ResizeObserverMock = vi.fn(function ResizeObserver() {
+      return {
+        disconnect: vi.fn(),
+        observe: vi.fn(),
+        takeRecords: vi.fn(),
+        unobserve: vi.fn(),
+      };
+    });
     vi.stubGlobal('ResizeObserver', ResizeObserverMock);
   });
 

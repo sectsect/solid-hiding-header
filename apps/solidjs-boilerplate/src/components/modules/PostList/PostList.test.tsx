@@ -121,12 +121,14 @@ describe('PostList component', () => {
 
   test('should render post titles', async () => {
     // Mock window.ResizeObserver @ https://vitest.dev/guide/mocking.html#globals
-    const ResizeObserverMock = vi.fn(() => ({
-      disconnect: vi.fn(),
-      observe: vi.fn(),
-      takeRecords: vi.fn(),
-      unobserve: vi.fn(),
-    }));
+    const ResizeObserverMock = vi.fn(function ResizeObserver() {
+      return {
+        disconnect: vi.fn(),
+        observe: vi.fn(),
+        takeRecords: vi.fn(),
+        unobserve: vi.fn(),
+      };
+    });
     vi.stubGlobal('ResizeObserver', ResizeObserverMock);
     // now you can access it as `ResizeObserver` or `window.ResizeObserver`
 

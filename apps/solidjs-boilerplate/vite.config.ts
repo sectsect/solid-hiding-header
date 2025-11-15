@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /// <reference types="vitest" />
+import tailwindcss from '@tailwindcss/vite';
 import solidPlugin from 'vite-plugin-solid';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
-import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [solidPlugin(), tsconfigPaths(), tailwindcss()],
@@ -28,12 +28,8 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
-    testTransformMode: {
-      web: ['/.[jt]sx?$/'],
-    },
     setupFiles: './vitest.setup.ts',
     coverage: {
-      all: false,
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
       exclude: [
@@ -73,7 +69,7 @@ export default defineConfig({
       '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress}.config.*',
       '**/e2e/**', // Additional e2e directory for Playwright.
       '**/mocks/**',
-    ]
+    ],
   },
   define: process.env.VITEST ? {} : { global: 'window' },
 });
