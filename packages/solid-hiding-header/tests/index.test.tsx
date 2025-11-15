@@ -80,16 +80,10 @@ describe('HidingHeader component', () => {
     // Bug for `toHaveStyle()` on CSS Custom Property @ https://github.com/testing-library/jest-dom/issues/280
     // expect(containerElm).toHaveStyle(`--hidingHeader-height: 0px;`);
 
-    // const headerRoots = document.getElementsByClassName('hidingHeader');
-    // const style = window.getComputedStyle(headerRoots[0]);
-    // const hidingHeaderHeight = style.getPropertyValue('--hidingHeader-height');
-    // expect(hidingHeaderHeight).toBe('0px');
-
-    // workaround @ https://github.com/testing-library/jest-dom/issues/280#issuecomment-1908657917
-    // @ts-ignore
-    expect(containerElm.style._values).toMatchObject({
-      '--hidingHeader-height': '0px',
-    });
+    // Use getComputedStyle() and getPropertyValue() to check CSS Custom Property
+    const style = window.getComputedStyle(containerElm);
+    const hidingHeaderHeight = style.getPropertyValue('--hidingHeader-height');
+    expect(hidingHeaderHeight).toBe('0px');
     unmount();
   });
 
