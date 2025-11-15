@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.0.29
+
+### Patch Changes
+
+- [`af5aff9`](https://github.com/sectsect/solid-hiding-header/commit/af5aff98cdc169bb7371474216d04c509da11e57) Thanks [@sectsect](https://github.com/sectsect)! - .
+  - docs: add claude code guidance documentation
+  - chore(config): add serena memory directory to gitignore
+  - chore: update MSW to v2.12.2 to resolve jsdom testing issues
+  - chore: upgrade Vitest to v4.0.9
+  - chore(deps): update dependencies
+  - ci: fix pnpm version error
+
 ## 2.0.28
 
 ### Patch Changes
