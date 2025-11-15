@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "turbo build --log-order=grouped",
-    "dev": "turbo dev --no-cache --continue",
+    "dev": "turbo dev --cache=local:,remote: --continue",
     "test": "turbo test",
     "test:watch": "turbo test:watch",
     "test:e2e": "turbo test:e2e --filter=solidjs-boilerplate",
