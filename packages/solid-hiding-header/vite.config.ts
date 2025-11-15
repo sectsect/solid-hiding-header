@@ -27,12 +27,8 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
-    testTransformMode: {
-      web: ['/.[jt]sx?$/'],
-    },
     setupFiles: './vitest.setup.ts',
     coverage: {
-      all: false,
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
     },
