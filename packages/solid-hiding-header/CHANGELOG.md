@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.30
+
+### Patch Changes
+
+- [#55](https://github.com/sectsect/solid-hiding-header/pull/55) [`d85ba04`](https://github.com/sectsect/solid-hiding-header/commit/d85ba04bd9d9edfa4bb3f6bf4a4dc4f7973d8da1) Thanks [@sectsect](https://github.com/sectsect)! - .
+  - chore(deps): replace deprecated --no-cache with --cache option
+
 ## 2.0.29
 
 ### Patch Changes
