@@ -11,6 +11,7 @@ permissions:
   contents: write
   pull-requests: write
   packages: write
+  id-token: write
 
 jobs:
   release:
@@ -28,12 +29,13 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10.22.0
+          version: 10.25.0
 
-      - name: Setup Node.js 21.x
+      - name: Setup Node.js 24.x
         uses: actions/setup-node@v4
         with:
-          node-version: 21.x
+          node-version: 24.x
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install Dependencies
         run: pnpm i --frozen-lockfile
@@ -87,7 +89,6 @@ jobs:
           title: 'chore: release package(s)'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # - name: Send a Slack notification if a publish happens
       #   if: steps.changesets.outputs.published == 'true'
