@@ -32,6 +32,6 @@
     "secretlint": "^11.2.5",
     "turbo": "^2.6.1"
   },
-  "packageManager": "pnpm@10.22.0",
+  "packageManager": "pnpm@10.25.0",
   "name": "solid-hiding-header"
 }
