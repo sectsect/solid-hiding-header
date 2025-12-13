@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.31
+
+### Patch Changes
+
+- [`1c5b6d3`](https://github.com/sectsect/solid-hiding-header/commit/1c5b6d3541094b969e14ce80533cca4148d8ec46) Thanks [@sectsect](https://github.com/sectsect)! - .
+  - chore: migrate to OIDC Trusted Publishing for npm releases
+  - chore(deps): update pnpm to 10.25.0
+
 ## 2.0.30
 
 ### Patch Changes
